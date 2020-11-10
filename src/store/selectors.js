@@ -1,0 +1,1 @@
+export const getInfos = (store) => store.infos;

@@ -1,7 +1,10 @@
 import {
     GET_LEAGUE_INFOS,
     GET_LEAGUE_INFOS_SUCCESS,
-    GET_LEAGUE_INFOS_ERROR
+    GET_LEAGUE_INFOS_ERROR,
+    GET_ALL_TEAMS,
+    GET_ALL_TEAMS_SUCCESS,
+    GET_ALL_TEAMS_ERROR
 } from './actionsTypes';
 
 export const getLeagueInfos = (payload) => ({
@@ -17,3 +20,17 @@ export const getLeagueInfosSuccess = (payload) => ({
 export const getLeagueInfosError = () => ({
     type: GET_LEAGUE_INFOS_ERROR,
 });
+
+export const getAllTeams = (payload) => ({
+    type: GET_ALL_TEAMS,
+    payload
+});
+
+export const getAllTeamsSuccess = (payload) => ({
+    type: GET_ALL_TEAMS_SUCCESS,
+    payload
+});
+
+export const getAllTeamsError = () => ({
+    type: GET_ALL_TEAMS_ERROR
+})

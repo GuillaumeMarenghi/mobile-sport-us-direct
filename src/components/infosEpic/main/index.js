@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { View, FlatList, StyleSheet, Text, TouchableOpacity } from "react-native";
+import { View, FlatList, StyleSheet, Text } from "react-native";
 import { getInfos } from "../../../store/selectors";
 
 import LeagueSelector from "./leagueSelector";
@@ -9,19 +9,11 @@ const Main = ({navigation}) => {
 
     const infos = useSelector(getInfos);
 
-    const _onPress = (id) => {
-        navigation.navigate("LeagueInfos", {
-        id,
-        });
-    }
-
     const _renderItem = ({ item }) => {
 
-    return <TouchableOpacity
-                onPress={_onPress(item.id)}
-            >
-        <LeagueSelector key={item.name} urlImage={item.badge} name={item.name} />
-        </TouchableOpacity>
+    return (
+        <LeagueSelector key={item.id} urlImage={item.badge} name={item.name} id={item.id} navigation={navigation} />
+    )   
     }
 
     return(

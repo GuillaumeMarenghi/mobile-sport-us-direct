@@ -1,19 +1,24 @@
 import React from "react";
-import { View, StyleSheet, Text, Image } from "react-native";
+import { View, StyleSheet, Text, Image, TouchableOpacity } from "react-native";
 
-const LeagueSelector = ({name, urlImage}) => {
-    console.log(urlImage)
+const LeagueSelector = ({name, urlImage, id, navigation}) => {
     return(
-        <View style={styles.container}>
-            <Image
-                style={styles.badge}
-                source={{
-                    uri:urlImage
-                }}
-            />
-            <Text style={styles.name}>
-            </Text>
-        </View>
+        <TouchableOpacity
+        onPress={() => {
+            navigation.navigate("LeagueInfos", {
+              id, name
+            })
+        }}
+        >
+            <View style={styles.container}>
+                <Image
+                    style={styles.badge}
+                    source={{
+                        uri:urlImage
+                    }}
+                />
+            </View>
+        </TouchableOpacity>
     )
 }
 

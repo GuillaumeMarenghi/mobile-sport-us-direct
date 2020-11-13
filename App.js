@@ -11,6 +11,7 @@ import store from './src/store';
 
 import Infos from './src/components/infosEpic/main';
 import LeagueInfos from './src/components/infosEpic/leagueInfos';
+import TeamInfos from './src/components/infosEpic/teamInfos';
 
 const Stack = createStackNavigator();
 
@@ -22,6 +23,7 @@ export default function App() {
           <Stack.Navigator>
             <Stack.Screen name="Infos" component={Infos} />
             <Stack.Screen name="LeagueInfos" component={LeagueInfos} />
+            <Stack.Screen name="TeamInfos" component={TeamInfos} />
           </Stack.Navigator>
         </NavigationContainer>
       </PaperProvider>

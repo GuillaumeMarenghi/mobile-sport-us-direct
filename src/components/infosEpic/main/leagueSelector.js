@@ -1,12 +1,12 @@
 import React from "react";
-import { View, StyleSheet, Text, Image, TouchableOpacity } from "react-native";
+import { View, StyleSheet, Image, TouchableOpacity } from "react-native";
 
 const LeagueSelector = ({name, urlImage, id, navigation}) => {
     return(
         <TouchableOpacity
         onPress={() => {
             navigation.navigate("LeagueInfos", {
-              id, name
+              id, name, navigation
             })
         }}
         >

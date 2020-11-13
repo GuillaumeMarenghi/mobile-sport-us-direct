@@ -11,7 +11,7 @@ const infosAjaxMiddlewares = (store) => (next) => (action) => {
                 url: `https://www.thesportsdb.com/api/v1/json/1/lookupleague.php?id=${store.getState().infos.leagueId}`
             }).then(
                 (res) => {
-                    console.log('data 1' ,res.data.leagues[0]);
+                    //console.log('data 1' ,res.data.leagues[0]);
                     store.dispatch(getLeagueInfosSuccess(res.data.leagues[0]))
                 }
             ).catch(
@@ -27,7 +27,7 @@ const infosAjaxMiddlewares = (store) => (next) => (action) => {
                 url: `https://www.thesportsdb.com/api/v1/json/1/search_all_teams.php?l=${store.getState().infos.leagueName}`
             }).then(
                 (res) => {
-                    console.log('data 2', res.data.teams);
+                    //console.log('data 2', res.data.teams);
                     store.dispatch(getAllTeamsSuccess(res.data.teams))
                 }
             ).catch(

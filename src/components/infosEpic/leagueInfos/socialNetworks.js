@@ -2,27 +2,11 @@ import React , { useCallback } from "react";
 import { View, StyleSheet, Text, Linking} from "react-native";
 import { IconButton, Colors } from 'react-native-paper';
 
-const OpenURLButton = ({ url, reseau, color }) => {
-    const handlePress = useCallback(async () => {
-      const supported = await Linking.canOpenURL(url);
-  
-      if (supported) {
-        await Linking.openURL(url);
-      } else {
-        Alert.alert(`Don't know how to open this URL: ${url}`);
-      }
-    }, [url]);
-  
-    return <IconButton
-            icon={reseau}
-            color={color}
-            size={50}
-            onPress={handlePress} />;
-  }; 
+import OpenURLButton from '../../_shared.js/openUrlButton';
 
 const SocialNetworks = (infos) => {
 
-    const {strWebsite, strFacebook, strTwitter, strYoutube} = infos;
+    const {strWebsite, strFacebook, strTwitter, strYoutube} = infos.infos;
     
     return (
         <View style={styles.mainContainer}>

@@ -4,7 +4,10 @@ import {
     GET_LEAGUE_INFOS_ERROR,
     GET_ALL_TEAMS,
     GET_ALL_TEAMS_SUCCESS,
-    GET_ALL_TEAMS_ERROR
+    GET_ALL_TEAMS_ERROR,
+    GET_ALL_PLAYERS,
+    GET_ALL_PLAYERS_SUCCESS,
+    GET_ALL_PLAYERS_ERROR
 } from './actionsTypes';
 
 export const getLeagueInfos = (payload) => ({
@@ -33,4 +36,18 @@ export const getAllTeamsSuccess = (payload) => ({
 
 export const getAllTeamsError = () => ({
     type: GET_ALL_TEAMS_ERROR
+});
+
+export const getAllPlayers = (payload) => ({
+    type: GET_ALL_PLAYERS,
+    payload
+});
+
+export const getAllPlayersSuccess = (payload) => ({
+    type: GET_ALL_PLAYERS_SUCCESS,
+    payload
+});
+
+export const getAllPlayersError = () => ({
+    type: GET_ALL_PLAYERS_ERROR
 })

@@ -1,6 +1,8 @@
 import axios from 'axios';
-import { GET_LEAGUE_INFOS, GET_ALL_TEAMS } from '../actionsTypes';
-import { getLeagueInfosSuccess, getLeagueInfosError, getAllTeamsSuccess, getAllTeamsError} from '../actions';
+const API_KEY = 4013017;
+
+import { GET_LEAGUE_INFOS, GET_ALL_TEAMS, GET_ALL_PLAYERS} from '../actionsTypes';
+import { getLeagueInfosSuccess, getLeagueInfosError, getAllTeamsSuccess, getAllTeamsError, getAllPlayersSuccess, getAllPlayersError} from '../actions';
 
 const infosAjaxMiddlewares = (store) => (next) => (action) => {
     next(action);
@@ -37,6 +39,20 @@ const infosAjaxMiddlewares = (store) => (next) => (action) => {
                 }
             )
             break;
+        case GET_ALL_PLAYERS:
+            axios({
+                method: 'get',
+                url: `https://www.thesportsdb.com/api/v1/json/${API_KEY}/searchplayers.php?t=${store.getState().infos.teamName}`
+            }).then(
+                (res) => {
+                    store.dispatch(getAllPlayersSuccess(res.data.player))
+                }
+            ).catch(
+                (err) => {
+                    console.log('error', err);
+                    store.dispatch(getAllPlayersError)
+                }
+            )
         default:
             return;
     }

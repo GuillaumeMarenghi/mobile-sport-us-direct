@@ -5,6 +5,9 @@ import {
   GET_ALL_TEAMS,
   GET_ALL_TEAMS_SUCCESS,
   GET_ALL_TEAMS_ERROR,
+  GET_ALL_PLAYERS,
+  GET_ALL_PLAYERS_SUCCESS,
+  GET_ALL_PLAYERS_ERROR
 } from '../actionsTypes';
 
 const defaultState = {
@@ -54,6 +57,25 @@ export const infos = (state = defaultState, action = {}) => {
         allTeams: action.payload
       }
     case GET_ALL_TEAMS_ERROR:
+      return {
+        ...state,
+        loading: false,
+        requestError: true
+      }
+    case GET_ALL_PLAYERS:
+      return {
+        ...state,
+        loading: true,
+        teamName: action.payload,
+        players: null
+      }
+    case GET_ALL_PLAYERS_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        players: action.payload
+      }
+    case GET_ALL_PLAYERS_ERROR:
       return {
         ...state,
         loading: false,

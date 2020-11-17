@@ -10,10 +10,9 @@ const Main = ({navigation}) => {
     const infos = useSelector(getInfos);
 
     const _renderItem = ({ item }) => {
-
-    return (
-        <LeagueSelector key={item.name} urlImage={item.badge} name={item.name} id={item.id} navigation={navigation} />
-    )   
+        return (
+            <LeagueSelector urlImage={item.badge} name={item.name} id={item.id}  navigation={navigation} />
+        )   
     }
 
     return(
@@ -24,6 +23,7 @@ const Main = ({navigation}) => {
             <FlatList
                 data={infos.leagues}
                 renderItem={_renderItem}
+                keyExtractor={item => item.name}
                 ItemSeparatorComponent={() => <View style={styles.separator} />}
             />
         </View>

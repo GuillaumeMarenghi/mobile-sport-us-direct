@@ -11,7 +11,6 @@ import { Colors } from 'react-native-paper';
 const TeamInfos = ({route}) => {
 
     const { team, navigation } = route.params;
-    console.log('team:', team)
 
     return(
         <ScrollView >
@@ -29,7 +28,7 @@ const TeamInfos = ({route}) => {
             </View>
             </View>
             <Stadium team={team}/>
-            <Players teamName={team.strTeam}/>
+            <Players teamName={team.strTeam} navigation={navigation}/>
         </ScrollView>
     )
 };

@@ -1,11 +1,14 @@
 import React, {useEffect} from "react";
 import { Text, StyleSheet, View, Image} from "react-native";
 import { useSelector, useDispatch } from "react-redux";
+import { ActivityIndicator } from 'react-native-paper';
 
 import { getAllPlayers } from "../../../store/actions";
 import { getInfos } from "../../../store/selectors";
 
-const Players = ({teamName}) => {
+import Player from "./player";
+
+const Players = ({teamName, navigation}) => {
 
     const dispatch = useDispatch();
 
@@ -20,13 +23,16 @@ const Players = ({teamName}) => {
     return(
     <View>
         <Text style={styles.title}>Coach et Joueurs</Text>
+        {infos.loading ? <ActivityIndicator /> :
         <View style={styles.players}>
         {players && players.map( player => {
             return(
-                <View><Text>{player.strPlayer}</Text></View>
+                <View key={player.strPlayer} style={styles.player}>
+                    <Player {...player} navigation={navigation}/>
+                </View>
             )
         })}
-        </View>
+        </View>}
     </View>
     )
 }
@@ -39,7 +45,13 @@ const styles = StyleSheet.create({
         fontSize: 20
     },
     players : {
-        
+        display: 'flex',
+        flexDirection: "row",
+        flexWrap: 'wrap',
+        justifyContent: 'space-around'
+    },
+    player: {
+        maxWidth: '33%'
     }
 });
 

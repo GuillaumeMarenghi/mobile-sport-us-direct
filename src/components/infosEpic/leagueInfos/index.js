@@ -15,16 +15,12 @@ const LeagueInfos = ({route}) => {
 
     const { id, name, navigation } = route.params;
     
-
     const dispatch = useDispatch();
 
     const infos = useSelector(getInfos);
-    //console.log('infos:', infos)
 
     useEffect(() => {
         dispatch(getLeagueInfos(id));
-        //dispatch(getAllTeams(name));
-        console.log('name:', name)
     }, [])
 
     return(

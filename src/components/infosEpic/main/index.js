@@ -11,7 +11,7 @@ const Main = ({navigation}) => {
 
     const _renderItem = ({ item }) => {
         return (
-            <LeagueSelector urlImage={item.badge} name={item.name} id={item.id}  navigation={navigation} />
+            <LeagueSelector urlImage={item.badge} name={item.name} id={item.id} navigation={navigation} />
         )   
     }
 

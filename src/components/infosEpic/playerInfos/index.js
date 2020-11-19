@@ -7,6 +7,7 @@ import OpenUrlButton from '../../_shared.js/openUrlButton';
 
 const PlayerInfos = ({route}) => {
     const { player } = route.params
+    //console.log('player:', player)
 
     return(
     <ScrollView>

@@ -12,6 +12,7 @@ import store from './src/store';
 
 import InfosScreen from './src/components/infosEpic';
 import Highlights from './src/components/hightlightsEpic/main'
+import LiveScore from './src/components/liveScoresEpic/main'
 
 
 const Stack = createStackNavigator();
@@ -32,7 +33,10 @@ export default function App() {
                       icon = "md-information-circle"
                       break;
                     case "Highlights":
-                      icon = "md-information"
+                      icon = "md-tv"
+                      break;
+                    case "LiveScore":
+                      icon = "ios-stopwatch"
                       break;
                     default:
                       icon = "ios-list"
@@ -42,6 +46,7 @@ export default function App() {
                 }
               })
             }>
+            <Tabs.Screen name="LiveScore" component={LiveScore} />
             <Tabs.Screen name="Highlights" component={Highlights}  />
             <Tabs.Screen name="InfosScreen" component={InfosScreen} />
           </Tabs.Navigator>

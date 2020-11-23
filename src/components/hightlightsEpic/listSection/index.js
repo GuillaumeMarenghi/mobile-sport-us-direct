@@ -1,10 +1,6 @@
-import React, {useEffect} from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { View, StyleSheet, Text } from "react-native";
+import React from "react";
+import { View, StyleSheet } from "react-native";
 import { List, Switch } from 'react-native-paper';
-
-import { getHighlights } from '../../../store/actionsHighlights';
-import { getStoreHighlights } from '../../../store/selectors'
 
 import Video from './video';
 
@@ -12,14 +8,6 @@ import Video from './video';
 const main = ({league, icon, color}) => {
     const [isSwitchOn, setIsSwitchOn] = React.useState(false);
     const onToggleSwitch = () => setIsSwitchOn(!isSwitchOn);
-
-/*     const dispatch = useDispatch();
-    const highlights = useSelector(getStoreHighlights);
-    console.log('highlights:', highlights)
-
-    useEffect(() => {
-        dispatch(getHighlights(league));
-    }, []) */
 
     return(
         <View>

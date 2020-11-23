@@ -26,6 +26,8 @@ const highlightsAjaxMiddlewares = (store) => (next) => (action) => {
                         case "NHL":
                             store.dispatch(getHighlightsNHLSucces(res.data.tvhighlights))
                             break;
+                        case "American Major League Soccer":
+                            store.dispatch(getHighlightsMLSSucces(res.data.tvhighlights))
                         default:
                             return
                     }

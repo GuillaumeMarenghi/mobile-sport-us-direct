@@ -36,7 +36,7 @@ const Video = ({league}) => {
 
     useEffect(() => {
         dispatch(getHighlights(league));
-        console.log('highlights:', highlights)
+        //console.log('highlights:', highlights)
     }, [])
 
     return(

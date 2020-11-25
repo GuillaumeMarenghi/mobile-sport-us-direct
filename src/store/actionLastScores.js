@@ -9,6 +9,8 @@ import {
     GET_LAST_SCORE_NFL_SUCCESS,
     GET_LAST_SCORE_NHL_SUCCESS,
     GET_LAST_SCORE_MLS_SUCCESS,
+    GET_LOGO,
+    GET_LOGO_SUCCESS,
     GET_LAST_SCORE_ERROR
 } from './actionsTypes';
 
@@ -65,3 +67,14 @@ export const getLastScroresMLSsuccess = (payload) => ({
 export const getLastScroresError = () => ({
     type: GET_LAST_SCORE_ERROR
 });
+
+export const getLogo = (payload) => ({
+    type: GET_LOGO,
+    payload
+});
+
+export const getLogoSuccess = (payload) => ({
+    type: GET_LOGO_SUCCESS,
+    payload
+});
+

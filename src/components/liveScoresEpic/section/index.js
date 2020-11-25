@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, StyleSheet, Text } from "react-native";
+import { View, StyleSheet, ScrollView } from "react-native";
 import { ToggleButton } from 'react-native-paper';
 
 import Scores from './scores';
@@ -15,11 +15,11 @@ const main = () => {
                 <ToggleButton icon="baseball-bat" value="MLB" style={styles.toggle}/>
                 <ToggleButton icon="football" value="NFL" style={styles.toggle}/>
                 <ToggleButton icon="hockey-puck" value="NHL" style={styles.toggle}/>
-                <ToggleButton icon="soccer" value="MLS" style={styles.toggle}/>
+                <ToggleButton icon="soccer" value="American Major League Soccer" style={styles.toggle}/>
             </ToggleButton.Row>
-            <View>
+            <ScrollView>
                 <Scores stateValue={value}/>
-            </View>
+            </ScrollView>
         </View>
     )
 }

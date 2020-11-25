@@ -9,6 +9,8 @@ import {
     GET_LAST_SCORE_NFL_SUCCESS,
     GET_LAST_SCORE_NHL_SUCCESS,
     GET_LAST_SCORE_MLS_SUCCESS,
+    GET_LOGO,
+    GET_LOGO_SUCCESS,
     GET_LAST_SCORE_ERROR
 } from '../actionsTypes';
   
@@ -26,7 +28,7 @@ switch (action.type) {
     return {
         ...state,
         loading: false,
-        NBAlastScores: action.payload
+        gameLastScores: action.payload
     }
     case GET_LAST_SCORE_NFL:
     return {
@@ -38,7 +40,7 @@ switch (action.type) {
     return {
         ...state,
         loading: false,
-        NFLlastScores: action.payload
+        gameLastScores: action.payload
     }
     case GET_LAST_SCORE_MLB:
     return {
@@ -50,7 +52,7 @@ switch (action.type) {
     return {
         ...state,
         loading: false,
-        MLBlastScores: action.payload
+        gameLastScores: action.payload
     }
     case GET_LAST_SCORE_NHL:
     return {
@@ -62,7 +64,7 @@ switch (action.type) {
     return {
         ...state,
         loading: false,
-        NHLlastScores: action.payload
+        gameLastScores: action.payload
     }
     case GET_LAST_SCORE_MLS:
     return {
@@ -74,7 +76,7 @@ switch (action.type) {
     return {
         ...state,
         loading: false,
-        MLSlastScores: action.payload
+        gameLastScores: action.payload
     }
     case GET_LAST_SCORE_ERROR:
     return {
@@ -82,6 +84,17 @@ switch (action.type) {
         loading: false,
         requestError: true
     }
+    case GET_LOGO:
+        return {
+            ...state,
+            leagueOpen: action.payload,
+            logo: null
+        }
+    case GET_LOGO_SUCCESS:
+        return {
+            ...state,
+            logo: action.payload
+        }
     default:
     return state;
 }

@@ -7,7 +7,12 @@ import {
   GET_ALL_TEAMS_ERROR,
   GET_ALL_PLAYERS,
   GET_ALL_PLAYERS_SUCCESS,
-  GET_ALL_PLAYERS_ERROR
+  GET_ALL_PLAYERS_ERROR,
+  GET_PLAYER_DETAIL,
+  GET_PLAYER_DETAIL_CONTRACT,
+  GET_PLAYER_DETAIL_TEAMS,
+  GET_PLAYER_DETAIL_HONOURS,
+  GET_PLAYER_DETAIL_ERROR
 } from '../actionsTypes';
 
 const defaultState = {
@@ -79,6 +84,34 @@ export const infos = (state = defaultState, action = {}) => {
       return {
         ...state,
         loading: false,
+        requestError: true
+      }
+    case GET_PLAYER_DETAIL:
+      return {
+        ...state,
+        playerId: action.payload,
+        playerContract: null,
+        playerTeams: null,
+        playerHonours: null
+      }
+    case GET_PLAYER_DETAIL_CONTRACT:
+      return {
+        ...state,
+        playerContract: action.payload
+      }
+    case GET_PLAYER_DETAIL_TEAMS:
+      return {
+        ...state,
+        playerTeams: action.payload
+      }
+    case GET_PLAYER_DETAIL_HONOURS:
+      return {
+        ...state,
+        playerHonours: action.payload
+      }
+    case GET_PLAYER_DETAIL_ERROR:
+      return {
+        ...state,
         requestError: true
       }
     default:

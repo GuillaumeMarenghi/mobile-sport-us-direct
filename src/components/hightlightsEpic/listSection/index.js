@@ -31,7 +31,8 @@ const main = ({league, icon, color}) => {
 const styles = StyleSheet.create({
     section : {
         borderBottomWidth: 2,
-        borderBottomColor: "#999"
+        borderBottomColor: "#999",
+        height: '20%'
     }
 })
 

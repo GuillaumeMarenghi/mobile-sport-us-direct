@@ -1,14 +1,27 @@
 import React from "react";
-import { View, StyleSheet, Text, Image } from "react-native";
+import { useSelector } from "react-redux";
+import { View, StyleSheet, Text, Image, TouchableOpacity } from "react-native";
+
+import { getStoreLastScores } from '../../../store/selectors'
 
 const GameBox = ( {game, teams} ) => {
+
+/*     const lastScore = useSelector(getStoreLastScores);
+    const navigation = lastScore.navigation; */
     
     const homeTeam = teams.find( team => team.idTeam == game.idHomeTeam);
 
     const awayTeam = teams.find( team => team.idTeam == game.idAwayTeam);
 
+/*     const _onPress = (eventId) => {
+            navigation.navigate('Details', {
+               eventId
+            })
+    } */
+
     return(
         <View style={styles.container}>
+        {/* <TouchableOpacity style={styles.container} onPress={() => _onPress(game.idEvent)}> */}
             <View>
                 <Text style={styles.date}>{game.strLeague} - {game.dateEvent} - terminé</Text>
             </View>
@@ -35,6 +48,9 @@ const GameBox = ( {game, teams} ) => {
                     <Text style={styles.team}>{game.strHomeTeam}</Text>
                 </View>
             </View>
+       
+            {/* <Text style={{textAlign: 'center', fontStyle: 'italic'}}>Selectionnez pour voir les détails du match</Text> */}
+        {/* </TouchableOpacity> */} 
         </View>
     )
 }

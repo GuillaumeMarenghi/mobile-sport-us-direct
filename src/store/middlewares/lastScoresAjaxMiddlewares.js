@@ -18,7 +18,7 @@ const lastScoresAjaxMiddleware = (store) => (next) => (action) => {
             ).catch(
                 (err) => {
                     console.log('error', err);
-                    store.dispatch(getLastScroresError)
+                    store.dispatch(getLastScroresError())
                 }
             )
             break;
@@ -33,7 +33,7 @@ const lastScoresAjaxMiddleware = (store) => (next) => (action) => {
             ).catch(
                 (err) => {
                     console.log('error', err);
-                    store.dispatch(getLastScroresError)
+                    store.dispatch(getLastScroresError())
                 }
             )
             break;
@@ -48,7 +48,7 @@ const lastScoresAjaxMiddleware = (store) => (next) => (action) => {
             ).catch(
                 (err) => {
                     console.log('error', err);
-                    store.dispatch(getLastScroresError)
+                    store.dispatch(getLastScroresError())
                 }
             )
             break;
@@ -63,7 +63,7 @@ const lastScoresAjaxMiddleware = (store) => (next) => (action) => {
             ).catch(
                 (err) => {
                     console.log('error', err);
-                    store.dispatch(getLastScroresError)
+                    store.dispatch(getLastScroresError())
                 }
             )
             break;
@@ -78,7 +78,7 @@ const lastScoresAjaxMiddleware = (store) => (next) => (action) => {
             ).catch(
                 (err) => {
                     console.log('error', err);
-                    store.dispatch(getLastScroresError)
+                    store.dispatch(getLastScroresError())
                 }
             )
             break;
@@ -93,7 +93,7 @@ const lastScoresAjaxMiddleware = (store) => (next) => (action) => {
                 ).catch(
                     (err) => {
                         console.log('error', err);
-                        store.dispatch(getLastScroresError)
+                        store.dispatch(getLastScroresError())
                     }
                 )
             break

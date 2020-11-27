@@ -7,6 +7,7 @@ import { getLastScroresNBA, getLastScroresMLB, getLastScroresNFL, getLastScrores
 import { getStoreLastScores} from "../../../store/selectors";
 
 import GameBox from './gameBox';
+import Error from '../../_shared.js/error'
 
     const LastScores = ({stateValue}) => {
 
@@ -36,15 +37,15 @@ import GameBox from './gameBox';
         dispatch(getLogo(stateValue));
     }, [stateValue]) 
 
-    //console.log('result', typeof lastScores.logo, lastScores.logo);
     return(
         <View style={styles.section}>
-            <Text style={styles.title}>Matchs terminé</Text>
+            <Text style={styles.title}> Derniers Matchs terminé</Text>
             {!lastScores.loading && lastScores.logo && lastScores.gameLastScores 
             ? 
             lastScores.gameLastScores.map( game => <GameBox game={game} teams={lastScores.logo} key={game.idEvent} /> ) 
             : 
             <ActivityIndicator /> } 
+            {lastScores.requestError && <Error /> }
         </View>
     )
 }

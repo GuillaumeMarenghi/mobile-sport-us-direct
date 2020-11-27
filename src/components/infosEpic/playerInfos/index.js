@@ -1,13 +1,23 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { Text, ScrollView, StyleSheet, View} from "react-native";
 import { Avatar, Colors } from 'react-native-paper';
+import { useDispatch, useSelector} from 'react-redux'
+
+import { getInfos } from '../../../store/selectors';
+import { getPlayerDetail } from '../../../store/actions'
 
 import Tag from '../../_shared.js/tag';
 import OpenUrlButton from '../../_shared.js/openUrlButton';
 
 const PlayerInfos = ({route}) => {
     const { player } = route.params
-    //console.log('player:', player)
+    const dispatch = useDispatch();
+    const infos = useSelector(getInfos);
+    console.log('infos:', infos.playerHonours)
+    
+    useEffect(() => {
+        dispatch(getPlayerDetail(player.idPlayer))
+    }, []); 
 
     return(
     <ScrollView>

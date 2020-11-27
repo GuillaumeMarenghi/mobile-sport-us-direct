@@ -1,8 +1,8 @@
 import axios from 'axios';
 const API_KEY = 4013017;
 
-import { GET_LEAGUE_INFOS, GET_ALL_TEAMS, GET_ALL_PLAYERS} from '../actionsTypes';
-import { getLeagueInfosSuccess, getLeagueInfosError, getAllTeamsSuccess, getAllTeamsError, getAllPlayersSuccess, getAllPlayersError} from '../actions';
+import { GET_LEAGUE_INFOS, GET_ALL_TEAMS, GET_ALL_PLAYERS, GET_PLAYER_DETAIL} from '../actionsTypes';
+import { getLeagueInfosSuccess, getLeagueInfosError, getAllTeamsSuccess, getAllTeamsError, getAllPlayersSuccess, getAllPlayersError, getPlayerDetailContract, getPlayerDetailHonours, getPlayerDetailTeams, getPlayerDetailError} from '../actions';
 
 const infosAjaxMiddlewares = (store) => (next) => (action) => {
     next(action);
@@ -19,7 +19,7 @@ const infosAjaxMiddlewares = (store) => (next) => (action) => {
             ).catch(
                 (err) => {
                     console.log('error', err);
-                    store.dispatch(getLeagueInfosError)
+                    store.dispatch(getLeagueInfosError())
                 }
             )
             break;
@@ -35,7 +35,7 @@ const infosAjaxMiddlewares = (store) => (next) => (action) => {
             ).catch(
                 (err) => {
                     console.log('error', err);
-                    store.dispatch(getAllTeamsError);
+                    store.dispatch(getAllTeamsError());
                 }
             )
             break;
@@ -50,9 +50,50 @@ const infosAjaxMiddlewares = (store) => (next) => (action) => {
             ).catch(
                 (err) => {
                     console.log('error', err);
-                    store.dispatch(getAllPlayersError)
+                    store.dispatch(getAllPlayersError())
                 }
             )
+            break;
+        case GET_PLAYER_DETAIL:
+            axios({
+                method: 'get',
+                url: `https://www.thesportsdb.com/api/v1/json/1/lookupcontracts.php?id=${store.getState().infos.playerId}`
+            }).then(
+                (res) => {
+                    store.dispatch(getPlayerDetailContract(res.data.contracts))
+                }
+            ).catch(
+                (err) => {
+                    console.log('error', err);
+                    store.dispatch(getPlayerDetailError())
+                }
+            );
+            axios({
+                method: 'get',
+                url: `https://www.thesportsdb.com/api/v1/json/1/lookupformerteams.php?id=${store.getState().infos.playerId}`
+            }).then(
+                (res) => {
+                    store.dispatch(getPlayerDetailTeams(res.data.formerteams))
+                }
+            ).catch(
+                (err) => {
+                    console.log('error', err);
+                    store.dispatch(getPlayerDetailError())
+                }
+            );
+            axios({
+                method: 'get',
+                url: `https://www.thesportsdb.com/api/v1/json/1/lookuphonors.php?id=${store.getState().infos.playerId}`
+            }).then(
+                (res) => {
+                    store.dispatch(getPlayerDetailHonours(res.data.honors))
+                }
+            ).catch(
+                (err) => {
+                    console.log('error', err);
+                    store.dispatch(getPlayerDetailError())
+                }
+            );
         default:
             return;
     }

@@ -35,7 +35,7 @@ const highlightsAjaxMiddlewares = (store) => (next) => (action) => {
             ).catch(
                 (err) => {
                     console.log('error', err);
-                    store.dispatch(getHighlightsError)
+                    store.dispatch(getHighlightsError())
                 }
             )
             break;

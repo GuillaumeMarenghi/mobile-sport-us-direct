@@ -1,9 +1,19 @@
-import React from "react";
+import React, {useEffect} from "react";
+import { useDispatch } from "react-redux";
 import { StyleSheet, Text, View } from "react-native";
+
+import {postNav} from '../../../store/actionLastScores';
 
 import Section from '../section';
 
-const main = () => {
+const main = ({navigation}) => {
+
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(postNav(navigation))
+    },[])
+
     return(
         <View style={styles.container}>
             <Text style={styles.title}>Live et derniers resultats</Text>
@@ -16,7 +26,7 @@ const main = () => {
 
 const styles = StyleSheet.create({
     container : {
-        marginTop: 70
+        marginTop: 5
     },
     title : {
         fontStyle : "italic",

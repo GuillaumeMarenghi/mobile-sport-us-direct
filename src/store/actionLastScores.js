@@ -11,7 +11,8 @@ import {
     GET_LAST_SCORE_MLS_SUCCESS,
     GET_LOGO,
     GET_LOGO_SUCCESS,
-    GET_LAST_SCORE_ERROR
+    GET_LAST_SCORE_ERROR,
+    POST_NAV
 } from './actionsTypes';
 
 export const getLastScroresNBA = (payload) => ({
@@ -78,3 +79,7 @@ export const getLogoSuccess = (payload) => ({
     payload
 });
 
+export const postNav = (payload) => ({
+    type: POST_NAV,
+    payload
+});

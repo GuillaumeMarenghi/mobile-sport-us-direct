@@ -8,7 +8,7 @@ const Scores = ({stateValue}) => {
 
     return(
         <View style={styles.section}>
-            <LastScores stateValue={stateValue}/>
+            <LastScores stateValue={stateValue} />
         </View>
     )
 }

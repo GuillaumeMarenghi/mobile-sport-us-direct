@@ -11,8 +11,8 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import store from './src/store';
 
 import InfosScreen from './src/components/infosEpic';
-import Highlights from './src/components/hightlightsEpic/main'
-import LiveScore from './src/components/liveScoresEpic/main'
+import Highlights from './src/components/hightlightsEpic/'
+import LiveScore from './src/components/liveScoresEpic/'
 
 
 const Stack = createStackNavigator();

@@ -11,7 +11,8 @@ import {
     GET_LAST_SCORE_MLS_SUCCESS,
     GET_LOGO,
     GET_LOGO_SUCCESS,
-    GET_LAST_SCORE_ERROR
+    GET_LAST_SCORE_ERROR,
+    POST_NAV
 } from '../actionsTypes';
   
 const defaultState = {};
@@ -28,7 +29,8 @@ switch (action.type) {
     return {
         ...state,
         loading: false,
-        gameLastScores: action.payload
+        gameLastScores: action.payload,
+        requestError: false
     }
     case GET_LAST_SCORE_NFL:
     return {
@@ -40,7 +42,8 @@ switch (action.type) {
     return {
         ...state,
         loading: false,
-        gameLastScores: action.payload
+        gameLastScores: action.payload,
+        requestError: false
     }
     case GET_LAST_SCORE_MLB:
     return {
@@ -52,7 +55,8 @@ switch (action.type) {
     return {
         ...state,
         loading: false,
-        gameLastScores: action.payload
+        gameLastScores: action.payload,
+        requestError: false
     }
     case GET_LAST_SCORE_NHL:
     return {
@@ -64,7 +68,8 @@ switch (action.type) {
     return {
         ...state,
         loading: false,
-        gameLastScores: action.payload
+        gameLastScores: action.payload,
+        requestError: false
     }
     case GET_LAST_SCORE_MLS:
     return {
@@ -76,7 +81,8 @@ switch (action.type) {
     return {
         ...state,
         loading: false,
-        gameLastScores: action.payload
+        gameLastScores: action.payload,
+        requestError: false
     }
     case GET_LAST_SCORE_ERROR:
     return {
@@ -94,6 +100,11 @@ switch (action.type) {
         return {
             ...state,
             logo: action.payload
+        }
+    case POST_NAV:
+        return {
+            ...state,
+            navigation: action.payload
         }
     default:
     return state;

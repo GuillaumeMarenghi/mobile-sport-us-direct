@@ -38,6 +38,7 @@ export const getHighlightsMLBSucces = (payload) => ({
     payload
 });
 
-export const getHighlightsError = () => ({
+export const getHighlightsError = (payload) => ({
     type: GET_HIGHLIGHTS_ERROR,
+    payload
 });

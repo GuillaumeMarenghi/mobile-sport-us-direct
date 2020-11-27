@@ -7,7 +7,12 @@ import {
     GET_ALL_TEAMS_ERROR,
     GET_ALL_PLAYERS,
     GET_ALL_PLAYERS_SUCCESS,
-    GET_ALL_PLAYERS_ERROR
+    GET_ALL_PLAYERS_ERROR,
+    GET_PLAYER_DETAIL,
+    GET_PLAYER_DETAIL_CONTRACT,
+    GET_PLAYER_DETAIL_TEAMS,
+    GET_PLAYER_DETAIL_HONOURS,
+    GET_PLAYER_DETAIL_ERROR
 } from './actionsTypes';
 
 export const getLeagueInfos = (payload) => ({
@@ -35,7 +40,7 @@ export const getAllTeamsSuccess = (payload) => ({
 });
 
 export const getAllTeamsError = () => ({
-    type: GET_ALL_TEAMS_ERROR
+    type: GET_ALL_TEAMS_ERROR,
 });
 
 export const getAllPlayers = (payload) => ({
@@ -49,5 +54,30 @@ export const getAllPlayersSuccess = (payload) => ({
 });
 
 export const getAllPlayersError = () => ({
-    type: GET_ALL_PLAYERS_ERROR
-})
+    type: GET_ALL_PLAYERS_ERROR,
+});
+
+export const getPlayerDetail = (payload) => ({
+    type: GET_PLAYER_DETAIL,
+    payload
+});
+
+export const getPlayerDetailContract = (payload) => ({
+    type: GET_PLAYER_DETAIL_CONTRACT,
+    payload
+});
+
+export const getPlayerDetailTeams = (payload) => ({
+    type: GET_PLAYER_DETAIL_TEAMS,
+    payload
+});
+
+export const getPlayerDetailHonours = (payload) => ({
+    type: GET_PLAYER_DETAIL_HONOURS,
+    payload
+});
+
+export const getPlayerDetailError = () => ({
+    type: GET_PLAYER_DETAIL_ERROR,
+    
+});

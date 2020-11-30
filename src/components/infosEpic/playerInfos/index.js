@@ -8,12 +8,14 @@ import { getPlayerDetail } from '../../../store/actions'
 
 import Tag from '../../_shared.js/tag';
 import OpenUrlButton from '../../_shared.js/openUrlButton';
+import TeamCareer from "./teamCareer";
+import Honors from './honors';
 
 const PlayerInfos = ({route}) => {
     const { player } = route.params
     const dispatch = useDispatch();
     const infos = useSelector(getInfos);
-    console.log('infos:', infos.playerHonours)
+    console.log('infos:', infos.playerContract)
     
     useEffect(() => {
         dispatch(getPlayerDetail(player.idPlayer))
@@ -43,6 +45,15 @@ const PlayerInfos = ({route}) => {
             <Text>Bio :</Text>
             {player.strDescriptionFR ? <Text>{player.strDescriptionFR}</Text> : <Text>{player.strDescriptionEN}</Text>}
         </View>
+        </View >
+        <View style={{justifyContent: 'flex-start', padding: 10}}>
+            {infos.playerTeams && <Text style={styles.title}> Equipes </Text>}
+            {infos.playerContract ? infos.playerContract.map( elm => <TeamCareer {...elm} key={elm.id} />) : null}
+            {infos.playerTeams ? infos.playerTeams.sort((a,b) => {return b.strJoined - a.strJoined}).map( elm => <TeamCareer {...elm} key={elm.id} />) : null}
+        </View>
+        <View style={{justifyContent: 'flex-start', padding: 10}}>      
+            {infos.playerHonours && <Text style={styles.title}>Titres et récompenses</Text>}
+            {infos.playerHonours ? infos.playerHonours.sort((a,b) => {return b.strSeason - a.strSeason}).map( elm => <Honors {...elm} key={elm.id} />) : null}
         </View>
     </ScrollView>
     )
@@ -85,6 +96,11 @@ const styles = StyleSheet.create({
     },
     bio: {
         padding: 10
+    },
+    title: {
+        fontStyle: 'italic',
+        fontWeight: 'bold',
+        marginBottom: 10
     }
 })
 

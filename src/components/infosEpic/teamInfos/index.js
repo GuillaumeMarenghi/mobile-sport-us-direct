@@ -5,6 +5,7 @@ import TopPage from "../leagueInfos/topPage";
 import OpenURLButton from "../../_shared.js/openUrlButton";
 import Stadium from "./stadium";
 import Players from "./players";
+import Calendar from "./calendar";
 
 import { Colors } from 'react-native-paper';
 
@@ -29,6 +30,7 @@ const TeamInfos = ({route}) => {
             </View>
             <Stadium team={team}/>
             <Players teamName={team.strTeam} navigation={navigation}/>
+            <Calendar teamId={team.idTeam} name={team.strTeam}/>
         </ScrollView>
     )
 };

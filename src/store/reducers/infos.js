@@ -12,7 +12,11 @@ import {
   GET_PLAYER_DETAIL_CONTRACT,
   GET_PLAYER_DETAIL_TEAMS,
   GET_PLAYER_DETAIL_HONOURS,
-  GET_PLAYER_DETAIL_ERROR
+  GET_PLAYER_DETAIL_ERROR,
+  GET_TEAM_CALENDAR,
+  GET_TEAM_CALENDAR_NEXT,
+  GET_TEAM_CALENDAR_LAST,
+  GET_TEAM_CALENDAR_ERROR
 } from '../actionsTypes';
 
 const defaultState = {
@@ -110,6 +114,28 @@ export const infos = (state = defaultState, action = {}) => {
         playerHonours: action.payload
       }
     case GET_PLAYER_DETAIL_ERROR:
+      return {
+        ...state,
+        requestError: true
+      }
+    case GET_TEAM_CALENDAR:
+      return {
+        ...state,
+        teamId: action.payload,
+        lastGame: null,
+        nextGame: null
+      }
+    case GET_TEAM_CALENDAR_LAST:
+      return {
+        ...state,
+        lastGame: action.payload
+      }
+    case GET_TEAM_CALENDAR_NEXT:
+      return {
+        ...state,
+        nextGame: action.payload
+      }
+    case GET_TEAM_CALENDAR_ERROR:
       return {
         ...state,
         requestError: true

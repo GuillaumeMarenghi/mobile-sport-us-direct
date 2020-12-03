@@ -1,53 +1,44 @@
 import React from "react";
-import { View, StyleSheet, Text, Image, TouchableOpacity } from "react-native";
+import { View, StyleSheet, Text, Image, } from "react-native";
 
-const GameBox = ( {game, teams} ) => {
-    
-    const homeTeam = teams.find( team => team.idTeam == game.idHomeTeam);
 
-    const awayTeam = teams.find( team => team.idTeam == game.idAwayTeam);
+const GameBox = ( {game} ) => {
 
     return(
         <View style={styles.container}>
-        {/* <TouchableOpacity style={styles.container} onPress={() => _onPress(game.idEvent)}> */}
             <View>
-                <Text style={styles.date}>{game.strLeague} - {game.dateEvent} - terminé</Text>
+                <Text style={styles.date}>{game.strLeague}</Text>
             </View>
             <View style={styles.section}>
                 <View style={styles.teamCtn}>
                   <Image
                         style={styles.tinyLogo}
                         source={{
-                            uri: awayTeam.strTeamBadge,
+                            uri: game.strAwayTeamBadge,
                           }}
                     />  
                     <Text style={styles.team}>{game.strAwayTeam}</Text>
                 </View>
                 <View >
+                        <Text style={styles.min}>{game.strProgress}'</Text>
                     <Text style={styles.score}>{game.intAwayScore} - {game.intHomeScore}</Text>
                 </View>
                 <View style={styles.teamCtn}>
                       <Image
                         style={styles.tinyLogo}
                         source={{
-                            uri: homeTeam.strTeamBadge,
+                            uri: game.strHomeTeamBadge,
                           }}
                     /> 
                     <Text style={styles.team}>{game.strHomeTeam}</Text>
                 </View>
             </View>
-       
-            {/* <Text style={{textAlign: 'center', fontStyle: 'italic'}}>Selectionnez pour voir les détails du match</Text> */}
-        {/* </TouchableOpacity> */} 
         </View>
     )
 }
 
 const styles = StyleSheet.create({
     container : {
-        //borderWidth: 3,
-        //borderColor: '#bf0d3e',
-        //backgroundColor: '#bf0d3e30',
         backgroundColor: '#041e4230',
         borderRadius: 20,
         padding: 10,
@@ -84,6 +75,9 @@ const styles = StyleSheet.create({
     tinyLogo :{
         width: 50,
         height: 50
+    },
+    min:{
+        textAlign: 'center'
     }
 
 })

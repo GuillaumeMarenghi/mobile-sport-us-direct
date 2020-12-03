@@ -1,11 +1,9 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
-
 import { createStackNavigator } from "@react-navigation/stack";
 
 import Main from './main';
-import Details from './details/main';
-
+/* import Details from './details/main'; */
 
 const Stack = createStackNavigator();
 

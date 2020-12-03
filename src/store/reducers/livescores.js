@@ -25,7 +25,8 @@ export const liveScores = (state = defaultState, action = {}) => {
       return {
         ...state,
         loading: false,
-        NBAliveScrores: action.payload
+        NBAliveScrores: action.payload,
+        eventsInLive: action.payload
       }
     case GET_LIVE_SCORE_NFL:
       return {
@@ -36,7 +37,8 @@ export const liveScores = (state = defaultState, action = {}) => {
       return {
         ...state,
         loading: false,
-        NFLliveScrores: action.payload
+        NFLliveScrores: action.payload,
+        eventsInLive: action.payload
       }
     case GET_LIVE_SCORE_MLB:
       return {
@@ -47,7 +49,8 @@ export const liveScores = (state = defaultState, action = {}) => {
       return {
         ...state,
         loading: false,
-        MLBliveScrores: action.payload
+        MLBliveScrores: action.payload,
+        eventsInLive: action.payload
       }
     case GET_LIVE_SCORE_NHL:
     return {
@@ -58,7 +61,8 @@ export const liveScores = (state = defaultState, action = {}) => {
       return {
         ...state,
         loading: false,
-        NHLliveScrores: action.payload
+        NHLliveScrores: action.payload,
+        eventsInLive: action.payload
       }
     case GET_LIVE_SCORE_MLS:
       return {
@@ -69,7 +73,8 @@ export const liveScores = (state = defaultState, action = {}) => {
       return {
         ...state,
         loading: false,
-        MLSliveScrores: action.payload
+        MLSliveScrores: action.payload,
+        eventsInLive: action.payload
     }
     case GET_LIVE_SCORE_ERROR:
       return {

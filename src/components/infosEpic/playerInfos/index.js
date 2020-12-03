@@ -47,8 +47,8 @@ const PlayerInfos = ({route}) => {
         </View>
         </View >
         <View style={{justifyContent: 'flex-start', padding: 10}}>
-            {infos.playerTeams && <Text style={styles.title}> Equipes </Text>}
-            {infos.playerContract ? infos.playerContract.map( elm => <TeamCareer {...elm} key={elm.id} />) : null}
+            {infos.playerTeams && <Text style={styles.title}> Ancienne équipes </Text>}
+            {/* {infos.playerContract ? infos.playerContract.map( elm => <TeamCareer {...elm} key={elm.id} />) : null} */}
             {infos.playerTeams ? infos.playerTeams.sort((a,b) => {return b.strJoined - a.strJoined}).map( elm => <TeamCareer {...elm} key={elm.id} />) : null}
         </View>
         <View style={{justifyContent: 'flex-start', padding: 10}}>      

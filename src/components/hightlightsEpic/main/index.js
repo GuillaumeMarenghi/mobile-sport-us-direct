@@ -1,5 +1,5 @@
 import React from "react";
-import { ScrollView, StyleSheet, Text,View } from "react-native";
+import { ScrollView, StyleSheet, Image ,View } from "react-native";
 
 import ListSection from '../listSection';
 
@@ -14,14 +14,20 @@ const main = () => {
             <ListSection league='MLB' icon="baseball" color="#0f2472"/>
             <ListSection league='NHL' icon="hockey-puck" color="#73717e"/>
             <ListSection league='American Major League Soccer' icon="soccer" color="#f5c30a"/>
+            <View style={styles.logoCtn}>
+                <Image 
+                    style={styles.logo}
+                    source={require('../../../../assets/ZSPlogo.png')}>
+                </Image>
+            </View>
             </ScrollView>
+            
         </View>
     )
 }
 
 const styles = StyleSheet.create({
     container : {
-        marginBottom: 70
     },
     title : {
         //fontStyle : "italic",
@@ -33,6 +39,13 @@ const styles = StyleSheet.create({
         color: '#041e42',
         borderBottomWidth: 3,
         borderBottomColor: '#041e42'
+    },
+    logo: {
+        width: 300,
+        height: 300
+    },
+    logoCtn: {
+        alignItems: "center"
     }
 })
 

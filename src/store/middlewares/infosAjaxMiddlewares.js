@@ -1,8 +1,21 @@
 import axios from 'axios';
 const API_KEY = 4013017;
 
-import { GET_LEAGUE_INFOS, GET_ALL_TEAMS, GET_ALL_PLAYERS, GET_PLAYER_DETAIL} from '../actionsTypes';
-import { getLeagueInfosSuccess, getLeagueInfosError, getAllTeamsSuccess, getAllTeamsError, getAllPlayersSuccess, getAllPlayersError, getPlayerDetailContract, getPlayerDetailHonours, getPlayerDetailTeams, getPlayerDetailError} from '../actions';
+import { GET_LEAGUE_INFOS, GET_ALL_TEAMS, GET_ALL_PLAYERS, GET_PLAYER_DETAIL, GET_TEAM_CALENDAR} from '../actionsTypes';
+import { getLeagueInfosSuccess, 
+         getLeagueInfosError, 
+         getAllTeamsSuccess, 
+         getAllTeamsError, 
+         getAllPlayersSuccess, 
+         getAllPlayersError, 
+         getPlayerDetailContract, 
+         getPlayerDetailHonours, 
+         getPlayerDetailTeams, 
+         getPlayerDetailError,
+         getTeamCalendarNext,
+         getTeamCalendarLast,
+         getTeamCalendarError
+        } from '../actions';
 
 const infosAjaxMiddlewares = (store) => (next) => (action) => {
     next(action);
@@ -93,7 +106,36 @@ const infosAjaxMiddlewares = (store) => (next) => (action) => {
                     console.log('error', err);
                     store.dispatch(getPlayerDetailError())
                 }
+            )
+            break;
+        case GET_TEAM_CALENDAR:
+            axios({
+                method: 'get',
+                url: `https://www.thesportsdb.com/api/v1/json/1/eventsnext.php?id=${store.getState().infos.teamId}`
+            }).then(
+                (res) => {
+                    store.dispatch(getTeamCalendarNext(res.data.events))
+                }
+            ).catch(
+                (err) => {
+                    console.log('error', err);
+                    store.dispatch(getTeamCalendarError())
+                }
             );
+            axios({
+                method: 'get',
+                url: `https://www.thesportsdb.com/api/v1/json/1/eventslast.php?id=${store.getState().infos.teamId}`
+            }).then(
+                (res) => {
+                    store.dispatch(getTeamCalendarLast(res.data.results))
+                }
+            ).catch(
+                (err) => {
+                    console.log('error', err);
+                    store.dispatch(getTeamCalendarError())
+                }
+            );
+            break;
         default:
             return;
     }

@@ -52,7 +52,6 @@ import Error from '../../_shared.js/error'
 
 const styles = StyleSheet.create({
     section : {
-        paddingBottom : 260
     },
     title : {
         backgroundColor: '#bf0d3e',

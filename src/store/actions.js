@@ -12,8 +12,31 @@ import {
     GET_PLAYER_DETAIL_CONTRACT,
     GET_PLAYER_DETAIL_TEAMS,
     GET_PLAYER_DETAIL_HONOURS,
-    GET_PLAYER_DETAIL_ERROR
+    GET_PLAYER_DETAIL_ERROR,
+    GET_TEAM_CALENDAR,
+    GET_TEAM_CALENDAR_LAST,
+    GET_TEAM_CALENDAR_NEXT,
+    GET_TEAM_CALENDAR_ERROR
 } from './actionsTypes';
+
+export const getTeamCalendar = (payload) => ({
+    type: GET_TEAM_CALENDAR,
+    payload
+});
+
+export const getTeamCalendarNext = (payload) => ({
+    type: GET_TEAM_CALENDAR_NEXT,
+    payload
+});
+
+export const getTeamCalendarLast = (payload) => ({
+    type: GET_TEAM_CALENDAR_LAST,
+    payload
+});
+
+export const getTeamCalendarError = (paload) => ({
+    type: GET_TEAM_CALENDAR_ERROR,
+});
 
 export const getLeagueInfos = (payload) => ({
     type: GET_LEAGUE_INFOS,

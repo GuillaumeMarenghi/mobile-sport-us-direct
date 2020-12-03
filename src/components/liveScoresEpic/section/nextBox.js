@@ -1,7 +1,7 @@
 import React from "react";
-import { View, StyleSheet, Text, Image, TouchableOpacity } from "react-native";
+import { View, StyleSheet, Text, Image } from "react-native";
 
-const GameBox = ( {game, teams} ) => {
+const NextBox = ( {game, teams} ) => {
     
     const homeTeam = teams.find( team => team.idTeam == game.idHomeTeam);
 
@@ -9,9 +9,8 @@ const GameBox = ( {game, teams} ) => {
 
     return(
         <View style={styles.container}>
-        {/* <TouchableOpacity style={styles.container} onPress={() => _onPress(game.idEvent)}> */}
             <View>
-                <Text style={styles.date}>{game.strLeague} - {game.dateEvent} - terminé</Text>
+                <Text style={styles.date}>{game.strLeague} - {game.dateEvent} à {game.strTime}</Text>
             </View>
             <View style={styles.section}>
                 <View style={styles.teamCtn}>
@@ -24,7 +23,7 @@ const GameBox = ( {game, teams} ) => {
                     <Text style={styles.team}>{game.strAwayTeam}</Text>
                 </View>
                 <View >
-                    <Text style={styles.score}>{game.intAwayScore} - {game.intHomeScore}</Text>
+                    <Text style={styles.score}>@</Text>
                 </View>
                 <View style={styles.teamCtn}>
                       <Image
@@ -36,9 +35,6 @@ const GameBox = ( {game, teams} ) => {
                     <Text style={styles.team}>{game.strHomeTeam}</Text>
                 </View>
             </View>
-       
-            {/* <Text style={{textAlign: 'center', fontStyle: 'italic'}}>Selectionnez pour voir les détails du match</Text> */}
-        {/* </TouchableOpacity> */} 
         </View>
     )
 }
@@ -55,10 +51,10 @@ const styles = StyleSheet.create({
     },
     date : {
         textAlign: 'center',
-        backgroundColor: '#041e42',
+        backgroundColor: '#fff',
         padding: 5,
         borderRadius: 10,
-        color: '#fff',
+        color: '#041e42',
         marginBottom: 8
     },
     section : {
@@ -88,4 +84,4 @@ const styles = StyleSheet.create({
 
 })
 
-export default GameBox;
+export default NextBox;

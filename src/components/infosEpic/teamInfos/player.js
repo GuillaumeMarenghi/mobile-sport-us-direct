@@ -7,7 +7,7 @@ const Player = (player) => {
 const { navigation } = player;
 
 const _onPress = () => {
-        navigation.navigate('PlayerInfos',{player})
+        navigation.navigate('Player Infos',{player})
 } 
     
     return(

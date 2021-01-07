@@ -35,7 +35,7 @@ export default function App() {
                     case "Highlights":
                       icon = "md-tv"
                       break;
-                    case "LiveScore":
+                    case "Scores":
                       icon = "ios-stopwatch"
                       break;
                     default:
@@ -46,7 +46,7 @@ export default function App() {
                 }
               })
             }>
-            <Tabs.Screen name="LiveScore" component={LiveScore} />
+            <Tabs.Screen name="Scores" component={LiveScore} />
             <Tabs.Screen name="Highlights" component={Highlights}  />
             <Tabs.Screen name="InfosScreen" component={InfosScreen} />
           </Tabs.Navigator>

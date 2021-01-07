@@ -16,7 +16,7 @@ const main = ({navigation}) => {
 
     return(
         <View style={styles.container}>
-            <Text style={styles.title}>Live et derniers resultats</Text>
+            <Text style={styles.title}>Derniers résultats / Prochains Matchs</Text>
             <View>
                 <Section />
             </View>
@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     },
     title : {
         fontStyle : "italic",
-        fontSize : 30,
+        fontSize : 20,
         fontWeight: "bold",
         textAlign : "center",
         marginBottom: 15

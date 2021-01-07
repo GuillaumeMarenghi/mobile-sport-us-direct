@@ -5,7 +5,7 @@ const LeagueSelector = ({name, urlImage, id, navigation}) => {
     return(
         <TouchableOpacity
         onPress={() => {
-            navigation.navigate("LeagueInfos", {
+            navigation.navigate("League Infos", {
               id, name, navigation
             })
         }}

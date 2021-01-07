@@ -48,7 +48,7 @@ const LiveScores = ({stateValue}) => {
                     {stateValue == 'NHL' && liveScores.NHLliveScrores ? liveScores.NHLliveScrores.map( game => <LiveBox game={game} key={game.idEvent} />): null}
                     {stateValue == 'MLS' && liveScores.MLSliveScrores ? liveScores.MLSliveScrores.map( game => <LiveBox game={game} key={game.idEvent} />): null}
                     {liveScores.requestError && <Error /> }
-                    {!liveScores.eventInLive && <Text style={styles.noLive}>Aucune rencontre n'a lieu en ce moment</Text>}
+                    {!liveScores.eventsInLive && <Text style={styles.noLive}>Aucune rencontre n'a lieu en ce moment</Text>}
                 </View>
         </View>
     )

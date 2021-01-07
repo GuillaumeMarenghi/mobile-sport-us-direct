@@ -18,7 +18,7 @@ const Teams = ({league, navigation}) => {
     }, [])
 
     const _onPress = (team) => {
-        navigation.navigate('TeamInfos', {
+        navigation.navigate('Team Infos', {
            team , navigation
         })
     }

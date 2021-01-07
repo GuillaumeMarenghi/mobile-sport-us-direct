@@ -10,7 +10,7 @@ const Scores = ({stateValue}) => {
 
     return(
         <View style={styles.section}>
-            <LiveScores stateValue={stateValue} />
+            {/* <LiveScores stateValue={stateValue} /> */}
             <LastScores stateValue={stateValue} />
             <NextScores stateValue={stateValue} />
         </View>

@@ -11,7 +11,7 @@ const InfosStack = () => {
     return(
     
         <Stack.Navigator>
-            <Stack.Screen name="Live Scores" component={Main} />
+            <Stack.Screen name="Scores" component={Main} />
             {/* <Stack.Screen name="Details" component={Details} /> */}
         </Stack.Navigator>
     

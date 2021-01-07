@@ -29,7 +29,7 @@ export default function App() {
                 tabBarIcon: ({focused, color, size}) => {
                   let icon;
                   switch (route.name) {
-                    case "InfosScreen":
+                    case "Infos":
                       icon = "md-information-circle"
                       break;
                     case "Highlights":
@@ -48,7 +48,7 @@ export default function App() {
             }>
             <Tabs.Screen name="Scores" component={LiveScore} />
             <Tabs.Screen name="Highlights" component={Highlights}  />
-            <Tabs.Screen name="InfosScreen" component={InfosScreen} />
+            <Tabs.Screen name="Infos" component={InfosScreen} />
           </Tabs.Navigator>
         </NavigationContainer>
       </PaperProvider>

@@ -15,7 +15,7 @@ const PlayerInfos = ({route}) => {
     const { player } = route.params
     const dispatch = useDispatch();
     const infos = useSelector(getInfos);
-    console.log('infos:', infos.playerContract)
+    /* console.log('infos:', infos.playerContract) */
     
     useEffect(() => {
         dispatch(getPlayerDetail(player.idPlayer))

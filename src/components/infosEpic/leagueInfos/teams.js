@@ -6,7 +6,7 @@ import { getInfos } from "../../../store/selectors";
 import { getAllTeams } from '../../../store/actions';
 
 const Teams = ({league, navigation}) => {
-    console.log('name123',league)
+    /* console.log('name123',league) */
 
     const dispatch = useDispatch();
     
@@ -14,7 +14,7 @@ const Teams = ({league, navigation}) => {
 
     useEffect(() => {
         dispatch(getAllTeams(league))
-        console.log('mounted')
+        /* console.log('mounted') */
     }, [])
 
     const _onPress = (team) => {

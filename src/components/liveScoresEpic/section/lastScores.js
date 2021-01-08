@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { View, StyleSheet, Text } from "react-native";
 import { ActivityIndicator } from "react-native-paper";
 
-import { getLastScroresNBA, getLastScroresMLB, getLastScroresNFL, getLastScroresNHL, getLastScroresMLS, getLogo} from "../../../store/actionLastScores";
+import { getLastScroresNBA, getLastScroresMLB, getLastScroresNFL, getLastScroresNHL, getLastScroresMLS, getLogo} from "../../../store/actions/actionLastScores";
 import { getStoreLastScores} from "../../../store/selectors";
 
 import GameBox from './gameBox';

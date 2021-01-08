@@ -3,8 +3,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { View, StyleSheet, Text } from "react-native";
 import { ActivityIndicator } from "react-native-paper";
 
-import { getNextScroresNBA, getNextScroresMLB, getNextScroresNFL, getNextScroresNHL, getNextScroresMLS} from "../../../store/actionNextScores";
-import { getLogo } from "../../../store/actionLastScores";
+import { getNextScroresNBA, getNextScroresMLB, getNextScroresNFL, getNextScroresNHL, getNextScroresMLS} from "../../../store/actions/actionNextScores";
+import { getLogo } from "../../../store/actions/actionLastScores";
 import { getStoreNextScores, getStoreLastScores} from "../../../store/selectors";
 
 import NextBox from './nextBox';

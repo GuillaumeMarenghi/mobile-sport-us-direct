@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { View, StyleSheet, Text } from "react-native";
 import { ActivityIndicator, Colors } from 'react-native-paper';
 
-import { getHighlights } from '../../../store/actionsHighlights';
+import { getHighlights } from '../../../store/actions/actionsHighlights';
 import { getStoreHighlights } from '../../../store/selectors'
 
 import VideoPlayer from './videoPlayer';

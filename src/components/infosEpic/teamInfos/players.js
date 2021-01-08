@@ -3,7 +3,7 @@ import { Text, StyleSheet, View, Image} from "react-native";
 import { useSelector, useDispatch } from "react-redux";
 import { ActivityIndicator } from 'react-native-paper';
 
-import { getAllPlayers } from "../../../store/actions";
+import { getAllPlayers } from "../../../store/actions/actions";
 import { getInfos } from "../../../store/selectors";
 
 import Player from "./player";

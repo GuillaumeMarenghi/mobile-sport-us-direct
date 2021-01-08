@@ -1,8 +1,8 @@
 import axios from 'axios';
 const API_KEY = 4013017;
 
-import { GET_LAST_SCORE_NBA, GET_LAST_SCORE_NFL, GET_LAST_SCORE_NHL, GET_LAST_SCORE_MLB, GET_LAST_SCORE_MLS, GET_LOGO} from '../actionsTypes';
-import { getLastScroresNBAsuccess, getLastScroresMLBsuccess, getLastScroresNFLsuccess, getLastScroresNHLsuccess, getLastScroresMLSsuccess, getLastScroresError, getLogoSuccess} from '../actionLastScores';
+import { GET_LAST_SCORE_NBA, GET_LAST_SCORE_NFL, GET_LAST_SCORE_NHL, GET_LAST_SCORE_MLB, GET_LAST_SCORE_MLS, GET_LOGO} from '../actions/actionsTypes';
+import { getLastScroresNBAsuccess, getLastScroresMLBsuccess, getLastScroresNFLsuccess, getLastScroresNHLsuccess, getLastScroresMLSsuccess, getLastScroresError, getLogoSuccess} from '../actions/actionLastScores';
 
 const lastScoresAjaxMiddleware = (store) => (next) => (action) => {
     next(action);

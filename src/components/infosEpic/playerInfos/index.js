@@ -4,7 +4,7 @@ import { Avatar, Colors } from 'react-native-paper';
 import { useDispatch, useSelector} from 'react-redux'
 
 import { getInfos } from '../../../store/selectors';
-import { getPlayerDetail } from '../../../store/actions'
+import { getPlayerDetail } from '../../../store/actions/actions'
 
 import Tag from '../../_shared.js/tag';
 import OpenUrlButton from '../../_shared.js/openUrlButton';

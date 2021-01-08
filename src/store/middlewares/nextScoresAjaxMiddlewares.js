@@ -1,9 +1,9 @@
 import axios from 'axios';
 const API_KEY = 4013017;
 
-import { GET_NEXT_SCORE_NBA, GET_NEXT_SCORE_NFL, GET_NEXT_SCORE_NHL, GET_NEXT_SCORE_MLB, GET_NEXT_SCORE_MLS, GET_LOGO} from '../actionsTypes';
-import { getLogoSuccess} from '../actionLastScores';
-import { getNextScroresNBAsuccess, getNextScroresMLBsuccess, getNextScroresNFLsuccess, getNextScroresNHLsuccess, getNextScroresMLSsuccess} from '../actionNextScores'
+import { GET_NEXT_SCORE_NBA, GET_NEXT_SCORE_NFL, GET_NEXT_SCORE_NHL, GET_NEXT_SCORE_MLB, GET_NEXT_SCORE_MLS, GET_LOGO} from '../actions/actionsTypes';
+import { getLogoSuccess} from '../actions/actionLastScores';
+import { getNextScroresNBAsuccess, getNextScroresMLBsuccess, getNextScroresNFLsuccess, getNextScroresNHLsuccess, getNextScroresMLSsuccess} from '../actions/actionNextScores'
 
 const nextScoresAjaxMiddleware = (store) => (next) => (action) => {
     next(action);

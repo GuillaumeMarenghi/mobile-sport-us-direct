@@ -6,7 +6,7 @@ import {
     GET_HIGHLIGHTS_NHL_SUCCESS,
     GET_HIGHLIGHTS_MLS_SUCCESS,
     GET_HIGHLIGHTS_ERROR
-} from '../actionsTypes';
+} from '../actions/actionsTypes';
 
 const defaultState = {};
 

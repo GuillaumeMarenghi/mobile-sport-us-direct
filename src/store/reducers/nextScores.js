@@ -10,7 +10,7 @@ import {
     GET_NEXT_SCORE_NHL_SUCCESS,
     GET_NEXT_SCORE_MLS_SUCCESS,
     GET_NEXT_SCORE_ERROR,
-} from '../actionsTypes';
+} from '../actions/actionsTypes';
   
 const defaultState = {};
   

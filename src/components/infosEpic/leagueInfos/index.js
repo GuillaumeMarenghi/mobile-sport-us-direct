@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { StyleSheet, ScrollView, View} from "react-native";
 
 import { getInfos } from "../../../store/selectors";
-import { getLeagueInfos } from '../../../store/actions';
+import { getLeagueInfos } from '../../../store/actions/actions';
 
 import { ActivityIndicator } from 'react-native-paper';
 

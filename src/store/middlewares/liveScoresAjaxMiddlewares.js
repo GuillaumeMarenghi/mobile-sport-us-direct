@@ -1,8 +1,8 @@
 import axios from 'axios';
 const API_KEY = 4013017;
 
-import { GET_LIVE_SCORE_NBA, GET_LIVE_SCORE_NFL, GET_LIVE_SCORE_NHL, GET_LIVE_SCORE_MLB, GET_LIVE_SCORE_MLS } from '../actionsTypes';
-import { getLiveScroresNBAsuccess, getLiveScroresMLBsuccess, getLiveScroresNFLsuccess, getLiveScroresNHLsuccess, getLiveScroresMLSsuccess, getLiveScroresError} from '../actionLiveScores';
+import { GET_LIVE_SCORE_NBA, GET_LIVE_SCORE_NFL, GET_LIVE_SCORE_NHL, GET_LIVE_SCORE_MLB, GET_LIVE_SCORE_MLS } from '../actions/actionsTypes';
+import { getLiveScroresNBAsuccess, getLiveScroresMLBsuccess, getLiveScroresNFLsuccess, getLiveScroresNHLsuccess, getLiveScroresMLSsuccess, getLiveScroresError} from '../actions/actionLiveScores';
 
 const liveScoresAjaxMiddleware = (store) => (next) => (action) => {
     next(action);

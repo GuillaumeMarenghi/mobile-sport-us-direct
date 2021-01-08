@@ -1,7 +1,7 @@
 import axios from 'axios';
 const API_KEY = 4013017;
 
-import { GET_LEAGUE_INFOS, GET_ALL_TEAMS, GET_ALL_PLAYERS, GET_PLAYER_DETAIL, GET_TEAM_CALENDAR} from '../actionsTypes';
+import { GET_LEAGUE_INFOS, GET_ALL_TEAMS, GET_ALL_PLAYERS, GET_PLAYER_DETAIL, GET_TEAM_CALENDAR} from '../actions/actionsTypes';
 import { getLeagueInfosSuccess, 
          getLeagueInfosError, 
          getAllTeamsSuccess, 
@@ -15,7 +15,7 @@ import { getLeagueInfosSuccess,
          getTeamCalendarNext,
          getTeamCalendarLast,
          getTeamCalendarError
-        } from '../actions';
+        } from '../actions/actions';
 
 const infosAjaxMiddlewares = (store) => (next) => (action) => {
     next(action);

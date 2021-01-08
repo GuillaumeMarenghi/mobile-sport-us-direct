@@ -1,8 +1,8 @@
 import axios from 'axios';
 const API_KEY = 4013017;
 
-import { GET_HIGHLIGHTS } from '../actionsTypes';
-import { getHighlightsNBASucces, getHighlightsMLBSucces, getHighlightsNFLSucces, getHighlightsNHLSucces, getHighlightsMLSSucces, getHighlightsError} from '../actionsHighlights';
+import { GET_HIGHLIGHTS } from '../actions/actionsTypes';
+import { getHighlightsNBASucces, getHighlightsMLBSucces, getHighlightsNFLSucces, getHighlightsNHLSucces, getHighlightsMLSSucces, getHighlightsError} from '../actions/actionsHighlights';
 
 const highlightsAjaxMiddlewares = (store) => (next) => (action) => {
     next(action);

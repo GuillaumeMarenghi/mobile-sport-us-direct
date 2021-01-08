@@ -2,7 +2,7 @@ import React, {useEffect} from "react";
 import { useDispatch } from "react-redux";
 import { StyleSheet, Text, View } from "react-native";
 
-import {postNav} from '../../../store/actionLastScores';
+import {postNav} from '../../../store/actions/actionLastScores';
 
 import Section from '../section';
 

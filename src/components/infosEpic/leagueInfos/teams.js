@@ -3,7 +3,7 @@ import { View, StyleSheet, Image, Text, TouchableOpacity} from "react-native";
 import { useSelector, useDispatch } from "react-redux";
 
 import { getInfos } from "../../../store/selectors";
-import { getAllTeams } from '../../../store/actions';
+import { getAllTeams } from '../../../store/actions/actions';
 
 const Teams = ({league, navigation}) => {
     /* console.log('name123',league) */

@@ -2,7 +2,7 @@ import React , {useEffect} from "react";
 import { Text, StyleSheet, View} from "react-native";
 import { useSelector, useDispatch } from "react-redux";
 
-import { getTeamCalendar } from "../../../store/actions";
+import { getTeamCalendar } from "../../../store/actions/actions";
 import { getInfos } from "../../../store/selectors";
 
 const Calendar = ({teamId, name}) => {

@@ -17,7 +17,7 @@ import {
   GET_TEAM_CALENDAR_NEXT,
   GET_TEAM_CALENDAR_LAST,
   GET_TEAM_CALENDAR_ERROR
-} from '../actionsTypes';
+} from '../actions/actionsTypes';
 
 const defaultState = {
     leagues: [

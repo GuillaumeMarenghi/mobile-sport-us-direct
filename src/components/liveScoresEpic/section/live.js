@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { View, StyleSheet, Text } from "react-native";
 import { ActivityIndicator } from "react-native-paper";
 
-import { getLiveScroresNBA, getLiveScroresMLB, getLiveScroresNFL, getLiveScroresNHL, getLiveScroresMLS} from "../../../store/actionLiveScores";
+import { getLiveScroresNBA, getLiveScroresMLB, getLiveScroresNFL, getLiveScroresNHL, getLiveScroresMLS} from "../../../store/actions/actionLiveScores";
 import { getStoreLiveScores} from "../../../store/selectors";
 
 import LiveBox from './liveBox';

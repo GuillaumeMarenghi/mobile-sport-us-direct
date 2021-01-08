@@ -11,8 +11,9 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import store from './src/store';
 
 import InfosScreen from './src/components/infosEpic';
-import Highlights from './src/components/hightlightsEpic/'
-import LiveScore from './src/components/liveScoresEpic/'
+import Highlights from './src/components/hightlightsEpic/';
+import LiveScore from './src/components/liveScoresEpic/';
+import Schedules from './src/components/schedulesEpic/';
 
 
 const Stack = createStackNavigator();
@@ -38,6 +39,9 @@ export default function App() {
                     case "Scores":
                       icon = "ios-stopwatch"
                       break;
+                    case "Classements":
+                      icon = "ios-list"
+                      break;
                     default:
                       icon = "ios-list"
                   }
@@ -48,6 +52,7 @@ export default function App() {
             }>
             <Tabs.Screen name="Scores" component={LiveScore} />
             <Tabs.Screen name="Highlights" component={Highlights}  />
+            <Tabs.Screen name="Classements" component={Schedules} />
             <Tabs.Screen name="Infos" component={InfosScreen} />
           </Tabs.Navigator>
         </NavigationContainer>

@@ -13,7 +13,7 @@ import {
     GET_LOGO_SUCCESS,
     GET_LAST_SCORE_ERROR,
     POST_NAV
-} from '../actionsTypes';
+} from '../actions/actionsTypes';
   
 const defaultState = {};
   

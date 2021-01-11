@@ -32,27 +32,27 @@ export const getRankingNHL = () => ({
     type: GET_RANKING_NHL
 });
 
-export const getRankingsNBASuccess = (payload) => ({
+export const getRankingNBASuccess = (payload) => ({
     type: GET_RANKING_NBA_SUCCESS,
     payload
 });
 
-export const getRankingsMLSSuccess = (payload) => ({
+export const getRankingMLSSuccess = (payload) => ({
     type: GET_RANKING_MLS_SUCCESS,
     payload
 });
 
-export const getRankingsNFLSuccess = (payload) => ({
+export const getRankingNFLSuccess = (payload) => ({
     type: GET_RANKING_NFL_SUCCESS,
     payload
 });
 
-export const getRankingsMLBSuccess = (payload) => ({
+export const getRankingMLBSuccess = (payload) => ({
     type: GET_RANKING_MLB_SUCCESS,
     payload
 });
 
-export const getRankingsNHLSuccess = (payload) => ({
+export const getRankingNHLSuccess = (payload) => ({
     type: GET_RANKING_NHL_SUCCESS,
     payload
 });

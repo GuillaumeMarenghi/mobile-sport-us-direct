@@ -5,13 +5,13 @@ import { getInfos } from "../../../store/selectors";
 
 import LeagueSelector from "./leagueSelector";
 
-const Main = () => {
+const Main = ({navigation}) => {
 
     const infos = useSelector(getInfos);
 
     const _renderItem = ({ item }) => {
         return (
-            <LeagueSelector urlImage={item.badge} name={item.name} id={item.id} />
+            <LeagueSelector urlImage={item.badge} name={item.name} id={item.id} navigation={navigation}/>
         )   
     }
 

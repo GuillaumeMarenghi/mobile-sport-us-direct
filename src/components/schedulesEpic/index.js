@@ -4,6 +4,7 @@ import { StyleSheet } from 'react-native';
 import { createStackNavigator } from "@react-navigation/stack";
 
 import Classements from './main';
+import Nba from './nba';
 
 const Stack = createStackNavigator();
 
@@ -12,9 +13,11 @@ const InfosStack = () => {
     
         <Stack.Navigator>
             <Stack.Screen name="Classements" component={Classements} />
-{/*             <Stack.Screen name="League Infos" component={LeagueInfos} />
-            <Stack.Screen name="Team Infos" component={TeamInfos} />
-            <Stack.Screen name="Player Infos" component={PlayerInfos} />*/}
+            <Stack.Screen name="Classement NBA" component={Nba} />
+{/*             <Stack.Screen name="Classement MLB" component={TeamInfos} />
+            <Stack.Screen name="Classement NFL" component={PlayerInfos} />
+            <Stack.Screen name="Classement NHL" component={PlayerInfos} />
+            <Stack.Screen name="Classement MLS" component={PlayerInfos} /> */}
         </Stack.Navigator> 
     
     )

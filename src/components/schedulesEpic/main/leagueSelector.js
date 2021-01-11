@@ -2,13 +2,14 @@ import React from "react";
 import { View, StyleSheet, Image, TouchableOpacity, Text } from "react-native";
 
 const LeagueSelector = ({name, urlImage, id, navigation}) => {
+    console.log('name:', name)
     return(
         <TouchableOpacity
-/*         onPress={() => {
-            navigation.navigate("League Infos", {
-              id, name, navigation
+        onPress={() => {
+            navigation.navigate(`Classement ${name}`, {
+              id, name
             })
-        }} */
+        }} 
         >
             <View style={styles.container}>
                 <Image

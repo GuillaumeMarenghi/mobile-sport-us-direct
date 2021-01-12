@@ -5,7 +5,6 @@ import YoutubePlayer from "react-native-youtube-iframe";
 const VideoPlayer = ({yt}) => {
 
   const id = yt.substr(32)
-  console.log('id:', id)
   const [playing, setPlaying] = useState(false);
 
   const onStateChange = useCallback((state) => {

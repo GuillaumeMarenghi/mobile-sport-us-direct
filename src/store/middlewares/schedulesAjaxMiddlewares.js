@@ -10,10 +10,11 @@ const schedulesAjaxMiddlewares = (store) => (next) => (action) => {
         case GET_RANKING_NBA:
             axios({
                 method: 'get',
-                url: `https://www.thesportsdb.com/api/v1/json/1/lookuptable.php?l=4387&s=2020-2021`
+                url: `https://api.sportsdata.io/v3/nba/scores/json/Standings/2021`,
+                headers: {"Ocp-Apim-Subscription-Key": "f2d3dbe8b6014e3e8605832b728c0d4f"}
             }).then(
                 (res) => {
-                    store.dispatch(getRankingNBASuccess(res.data.table))
+                    store.dispatch(getRankingNBASuccess(res.data))
                 }
             ).catch(
                 (err) => {

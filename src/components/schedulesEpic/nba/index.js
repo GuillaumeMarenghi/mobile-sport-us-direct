@@ -10,33 +10,39 @@ import RankingTable from '../../_shared.js/rankingTable';
 
 const Nba = () => {
 
-    const eastID = ["134863", "134862", "134883", "134860", "134861", "134870", "134871", "134880", "134881", "134873", "134874", "134882", "134872", "134864", "134884"];
+/*     const eastID = ["134863", "134862", "134883", "134860", "134861", "134870", "134871", "134880", "134881", "134873", "134874", "134882", "134872", "134864", "134884"];
+*/
     let eastConf = [];
-    let westConf = [];
+    let westConf = []; 
 
     const table = useSelector(getStoreSchedules);
     const dispatch = useDispatch();
 
     if(table.NBArank){
         table.NBArank.forEach(elm => {
-            const prc = elm.win/elm.played;
-            elm = {...elm, prc: prc.toFixed(2) }
-            if(eastID.includes(elm.teamid)) {
+            if(elm.Conference === "Eastern") {
                 eastConf = [...eastConf, elm]
             }else {
                westConf = [...westConf, elm]
             }
         });
         eastConf.sort(function(a,b) {
-            return b.prc - a.prc
+            return b.Percentage - a.Percentage
         })
         westConf.sort(function(a,b) {
-            return b.prc - a.prc
+            return b.Percentage - a.Percentage
         })
     }
 
     useEffect(() => {
-        dispatch(getRankingNBA())
+        if(table.NBArank) {
+            console.log("request in cache")
+            return
+        } else {
+            dispatch(getRankingNBA())
+            console.log("request")
+        }
+        
     }, []); 
 
     return(

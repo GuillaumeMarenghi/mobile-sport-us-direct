@@ -1,7 +1,7 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useCallback} from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { View, StyleSheet, Text } from "react-native";
-import { ActivityIndicator, Colors } from 'react-native-paper';
+import { View, StyleSheet, Text, Linking, Button } from "react-native";
+import { ActivityIndicator } from 'react-native-paper';
 
 import { getHighlights } from '../../../store/actions/actionsHighlights';
 import { getStoreHighlights } from '../../../store/selectors'
@@ -36,29 +36,50 @@ const Video = ({league}) => {
 
     useEffect(() => {
         dispatch(getHighlights(league));
-        //console.log('highlights:', highlights)
     }, [])
 
     return(
         <View style={styles.container}>
-            <Text>{allLeagueHighlights
-            ? 
+            <View>{allLeagueHighlights
+            ?
             <View style={styles.video}>
                 {allLeagueHighlights.map(elm => {
                     return(
-                    <View key={elm.strVideo}>
-                    <Text style={styles.title}>{elm.strEvent}</Text>
-                    <Text>{elm.dateEvent}</Text>
-                    <VideoPlayer yt={elm.strVideo}/>
+                    <View key={elm.strVideo} style={styles.section}>
+                        <Text style={styles.title}>{elm.strEvent}</Text>
+                        <Text>{elm.dateEvent}</Text>
+                        <VideoPlayer yt={elm.strVideo}/>
+                        <URLButton
+                            url={elm.strVideo}
+                        />
                     </View>
                     )
                 })}              
             </View>
             :   
-            <ActivityIndicator animating={true} style={styles.loading} />}</Text> 
+            <ActivityIndicator animating={true} style={styles.loading} />}</View> 
         </View>
     )
 }
+
+export const URLButton = ({ url }) => {
+    const handlePress = useCallback(async () => {
+    const supported = await Linking.canOpenURL(url);
+  
+      if (supported) {
+        await Linking.openURL(url);
+      } else {
+        Alert.alert(`Don't know how to open this URL: ${url}`);
+      }
+    }, [url]);
+  
+    return (
+       <Button
+            title="voir la video sur youtube"
+            onPress={handlePress} 
+        />
+    )
+  }; 
 
 const styles = StyleSheet.create({
     container : {
@@ -73,8 +94,10 @@ const styles = StyleSheet.create({
     },
     loading: {
         padding: 25
+    },
+    section : {
+        marginBottom: 23
     }
-
 })
 
 export default Video

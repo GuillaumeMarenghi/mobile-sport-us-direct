@@ -1,5 +1,5 @@
 import React from "react";
-import { ScrollView, StyleSheet, Image ,View } from "react-native";
+import { ScrollView, StyleSheet, Image ,View, Text} from "react-native";
 
 import ListSection from '../listSection';
 
@@ -9,6 +9,7 @@ const main = () => {
         <View style={styles.container}>
             {/* <Text style={styles.title}>Choix des ligues</Text> */}
             <ScrollView >
+            <Text style={styles.infos}>Les ligues bloquent parfoit les videos dans les lecteurs intégrés si c'est le cas cliquez sur le button "voir la video sur youtube" </Text>
             <ListSection league="NFL" icon="football" color="#e73c3f"/>
             <ListSection league="NBA" icon="basketball" color="#f6994f"/>
             <ListSection league='MLB' icon="baseball" color="#0f2472"/>
@@ -46,6 +47,11 @@ const styles = StyleSheet.create({
     },
     logoCtn: {
         alignItems: "center"
+    },
+    infos : {
+        textAlign: "center",
+        padding: 5,
+        fontSize: 12
     }
 })
 

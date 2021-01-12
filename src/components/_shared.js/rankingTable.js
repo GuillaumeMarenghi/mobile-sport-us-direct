@@ -18,13 +18,13 @@ const RankingTable = ({title, leagueArray}) => {
                     </DataTable.Header>
                     {leagueArray.map((elm, index) => {
                     return (
-                        <DataTable.Row key={elm.teamid}>
+                        <DataTable.Row key={elm.GlobalTeamID}>
                             <DataTable.Cell>{index + 1}</DataTable.Cell>
-                            <DataTable.Cell>{elm.name}</DataTable.Cell>
-                            <DataTable.Cell numeric>{elm.played}</DataTable.Cell>
-                            <DataTable.Cell numeric>{elm.win}</DataTable.Cell>
-                            <DataTable.Cell numeric>{elm.loss}</DataTable.Cell>
-                            <DataTable.Cell numeric>{elm.prc}</DataTable.Cell>
+                            <DataTable.Cell>{elm.City}</DataTable.Cell>
+                            <DataTable.Cell numeric>{elm.Wins + elm.Losses}</DataTable.Cell>
+                            <DataTable.Cell numeric>{elm.Wins}</DataTable.Cell>
+                            <DataTable.Cell numeric>{elm.Losses}</DataTable.Cell>
+                            <DataTable.Cell numeric>{elm.Percentage}</DataTable.Cell>
                         </DataTable.Row>
                     )})} 
                 </DataTable>

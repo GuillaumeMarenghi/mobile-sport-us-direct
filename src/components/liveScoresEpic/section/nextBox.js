@@ -17,22 +17,22 @@ const NextBox = ( {game, teams} ) => {
                   <Image
                         style={styles.tinyLogo}
                         source={{
-                            uri: awayTeam.strTeamBadge,
+                            uri: homeTeam.strTeamBadge,
                           }}
                     />  
-                    <Text style={styles.team}>{game.strAwayTeam}</Text>
+                    <Text style={styles.team}>{game.strHomeTeam}</Text>
                 </View>
                 <View >
-                    <Text style={styles.score}>@</Text>
+                    <Text style={styles.score}>VS</Text>
                 </View>
                 <View style={styles.teamCtn}>
                       <Image
                         style={styles.tinyLogo}
                         source={{
-                            uri: homeTeam.strTeamBadge,
+                            uri: awayTeam.strTeamBadge,
                           }}
                     /> 
-                    <Text style={styles.team}>{game.strHomeTeam}</Text>
+                    <Text style={styles.team}>{game.strAwayTeam}</Text>
                 </View>
             </View>
         </View>

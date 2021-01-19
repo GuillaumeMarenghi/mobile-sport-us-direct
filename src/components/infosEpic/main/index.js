@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
         height: 1,
         width: '100%',
         backgroundColor: '#091c3d',
-        marginVertical: "20%"
+        marginVertical: "18%"
     },
     title: {
         fontWeight: 'bold',

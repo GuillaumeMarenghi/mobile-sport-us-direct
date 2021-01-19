@@ -16,9 +16,9 @@ const InfosStack = () => {
     
         <Stack.Navigator>
             <Stack.Screen name="Infos" component={Infos} />
-            <Stack.Screen name="League Infos" component={LeagueInfos} />
-            <Stack.Screen name="Team Infos" component={TeamInfos} />
-            <Stack.Screen name="Player Infos" component={PlayerInfos} />
+            <Stack.Screen name="Infos ligue" component={LeagueInfos} />
+            <Stack.Screen name="Infos équipe" component={TeamInfos} />
+            <Stack.Screen name="Infos joueur" component={PlayerInfos} />
         </Stack.Navigator>
     
     )

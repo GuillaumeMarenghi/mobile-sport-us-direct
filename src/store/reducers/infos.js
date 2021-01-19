@@ -21,11 +21,9 @@ import {
 
 const defaultState = {
     leagues: [
-      {id: 4387, name:"NBA", badge:"https://www.thesportsdb.com/images/media/league/badge/frdjqy1536585083.png"},
-      {id: 4424, name:"MLB", badge:"https://www.thesportsdb.com/images/media/league/badge/c5r83j1521893739.png"},
-      {id: 4391, name:"NFL", badge:"https://www.thesportsdb.com/images/media/league/badge/trppxv1421413032.png"},
-      {id: 4380, name:"NHL", badge:"https://www.thesportsdb.com/images/media/league/badge/vxwtqq1421413200.png"},
-      {id: 4346, name:"American%20Major%20League%20Soccer", badge:"https://www.thesportsdb.com/images/media/league/badge/dqo6r91549878326.png"}
+      {id: 4334, name:"Ligue 1 Uber Eats", queryName: "French%20Ligue%201",  badge:"https://www.thesportsdb.com/images/media/league/badge/2yo0vn1592927519.png"},
+      {id: 4401, name:"Ligue 2 BKT", queryName: "French%20Ligue%202" , badge:"https://www.thesportsdb.com/images/media/league/badge/32bol01592927502.png"},
+      {id: 4637, name:"National 1", queryName: "French%20Championnat%20National" , badge:"https://www.thesportsdb.com/images/media/league/badge/odpejs1578785977.png"},
       ],
       leagueInfos: null,
       loading:false

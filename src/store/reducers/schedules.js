@@ -1,75 +1,54 @@
 import {
-    GET_RANKING_NBA,
-    GET_RANKING_MLS,
-    GET_RANKING_MLB,
-    GET_RANKING_NFL,
-    GET_RANKING_NHL,
-    GET_RANKING_NBA_SUCCESS,
-    GET_RANKING_MLS_SUCCESS,
-    GET_RANKING_MLB_SUCCESS,
-    GET_RANKING_NFL_SUCCESS,
-    GET_RANKING_NHL_SUCCESS,
+    GET_RANKING_L1,
+    GET_RANKING_L2,
+    GET_RANKING_N1,
+    GET_RANKING_L1_SUCCESS,
+    GET_RANKING_L2_SUCCESS,
+    GET_RANKING_N1_SUCCESS,
     GET_RANKING_ERROR,
 } from '../actions/actionsTypes';
 
-const defaultState = {};
+const defaultState = {
+  loading: true
+};
 
 export const schedules = (state = defaultState, action = {}) => {
     switch (action.type) {
-      case GET_RANKING_NBA:
+      case GET_RANKING_L1:
         return {
           ...state,
-          loading: true
+          loading: true,
         }
-      case GET_RANKING_NBA_SUCCESS:
+      case GET_RANKING_L1_SUCCESS:
         return {
           ...state,
           loading: false,
-          NBArank: action.payload,
+          Lrank: action.payload,
+          requestError: false
         }
-      case GET_RANKING_NFL:
+      case GET_RANKING_N1:
         return {
           ...state,
-          loading: true
+          loading: true,
         }
-      case GET_RANKING_NFL_SUCCESS:
-        return {
-          ...state,
-          loading: false,
-          NFLrank: action.payload,
-        }
-      case GET_RANKING_MLB:
-        return {
-          ...state,
-          loading: true
-        }
-      case GET_RANKING_MLB_SUCCESS:
+      case GET_RANKING_N1_SUCCESS:
         return {
           ...state,
           loading: false,
-          MLBrank: action.payload,
+          Lrank: action.payload,
+          requestError: false
         }
-      case GET_RANKING_NHL:
-      return {
-        ...state,
-        loading: true
-      }
-      case GET_RANKING_NHL_SUCCESS:
+      case GET_RANKING_L2:
+        return {
+          ...state,
+          loading: true,
+        }
+      case GET_RANKING_L2_SUCCESS:
         return {
           ...state,
           loading: false,
-          NHLrank: action.payload,
-        }
-      case GET_RANKING_MLS:
-        return {
-          ...state,
-          loading: true
-        }
-      case GET_RANKING_MLS_SUCCESS:
-        return {
-          ...state,
-          loading: false,
-          MLSrank: action.payload,
+          Lrank: action.payload,
+          requestError: false
       }
       case GET_RANKING_ERROR:
         return {

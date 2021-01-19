@@ -1,20 +1,19 @@
 import axios from 'axios';
 const API_KEY = 4013017;
 
-import { GET_RANKING_NBA, GET_RANKING_NFL, GET_RANKING_NHL, GET_RANKING_MLB, GET_RANKING_MLS} from '../actions/actionsTypes';
-import { getRankingNBASuccess, getRankingMLBSuccess, getRankingNFLSuccess, getRankingNHLSuccess, getRankingMLSSuccess, getRankingError} from '../actions/actionsSchedules';
+import { GET_RANKING_L1, GET_RANKING_L2, GET_RANKING_N1} from '../actions/actionsTypes';
+import { getRankingL1Success, getRankingL2Success, getRankingN1Success, getRankingError} from '../actions/actionsSchedules';
 
 const schedulesAjaxMiddlewares = (store) => (next) => (action) => {
     next(action);
     switch (action.type) {
-        case GET_RANKING_NBA:
+        case GET_RANKING_L1:
             axios({
                 method: 'get',
-                url: `https://api.sportsdata.io/v3/nba/scores/json/Standings/2021`,
-                headers: {"Ocp-Apim-Subscription-Key": "f2d3dbe8b6014e3e8605832b728c0d4f"}
+                url: `https://www.thesportsdb.com/api/v1/json/1/lookuptable.php?l=4334&s=2020-2021`,
             }).then(
                 (res) => {
-                    store.dispatch(getRankingNBASuccess(res.data))
+                    store.dispatch(getRankingL1Success(res.data.table))
                 }
             ).catch(
                 (err) => {
@@ -23,13 +22,13 @@ const schedulesAjaxMiddlewares = (store) => (next) => (action) => {
                 }
             )
             break;
-        case GET_RANKING_MLB:
+        case GET_RANKING_L2:
             axios({
                 method: 'get',
-                url: `https://www.thesportsdb.com/api/v1/json/1/lookuptable.php?l=4424&s=2020`
+                url: `https://www.thesportsdb.com/api/v1/json/1/lookuptable.php?l=4401&s=2020-2021`
             }).then(
                 (res) => {
-                    store.dispatch(getRankingMLBSuccess(res.data.table))
+                    store.dispatch(getRankingL2Success(res.data.table))
                 }
             ).catch(
                 (err) => {
@@ -38,43 +37,13 @@ const schedulesAjaxMiddlewares = (store) => (next) => (action) => {
                 }
             )
             break;
-        case GET_RANKING_NFL:
+        case GET_RANKING_N1:
             axios({
                 method: 'get',
-                url: `https://www.thesportsdb.com/api/v1/json/1/lookuptable.php?l=4391&s=2020`
+                url: `https://www.thesportsdb.com/api/v1/json/1/lookuptable.php?l=4637&s=2020-2021`
             }).then(
                 (res) => {
-                    store.dispatch(getRankingNFLSuccess(res.data.table))
-                }
-            ).catch(
-                (err) => {
-                    console.log('error', err);
-                    store.dispatch(getRankingError())
-                }
-            )
-            break;
-        case GET_RANKING_NHL:
-            axios({
-                method: 'get',
-                url: `https://www.thesportsdb.com/api/v1/json/1/lookuptable.php?l=4380&s=2020-2021`
-            }).then(
-                (res) => {
-                    store.dispatch(getRankingNHLSuccess(res.data.table))
-                }
-            ).catch(
-                (err) => {
-                    console.log('error', err);
-                    store.dispatch(getRankingError())
-                }
-            )
-            break;
-        case GET_RANKING_MLS:
-            axios({
-                method: 'get',
-                url: `https://www.thesportsdb.com/api/v1/json/1/lookuptable.php?l=4387&s=2020-2021`
-            }).then(
-                (res) => {
-                    store.dispatch(getRankingMLSSuccess(res.data.table))
+                    store.dispatch(getRankingN1Success(res.data.table))
                 }
             ).catch(
                 (err) => {

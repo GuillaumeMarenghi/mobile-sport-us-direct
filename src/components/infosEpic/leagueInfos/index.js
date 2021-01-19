@@ -13,7 +13,7 @@ import Teams from './teams';
 
 const LeagueInfos = ({route}) => {
 
-    const { id, name, navigation } = route.params;
+    const { id, name, queryName, navigation } = route.params;
     
     const dispatch = useDispatch();
 
@@ -30,7 +30,7 @@ const LeagueInfos = ({route}) => {
             <View>
                 <TopPage banner={infos.leagueInfos.strBanner} leagueName={infos.leagueInfos.strLeagueAlternate} />
                 <SocialNetworks infos={infos.leagueInfos}/>
-                <Teams league={name} navigation={navigation}/>
+                <Teams league={queryName} navigation={navigation}/>
             </View>
             }
         </ScrollView>

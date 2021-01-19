@@ -11,14 +11,14 @@ const Main = ({navigation}) => {
 
     const _renderItem = ({ item }) => {
         return (
-            <LeagueSelector urlImage={item.badge} name={item.name} id={item.id} navigation={navigation} />
+            <LeagueSelector urlImage={item.badge} name={item.name} id={item.id} queryName={item.queryName} navigation={navigation} />
         )   
     }
 
     return(
         <View style={styles.container}>
             <View >
-                <Text style={styles.title}>Selectionne une league pour voir les infos sur la league les équipes et les joueurs</Text>
+                <Text style={styles.title}>Selectionne une ligue pour voir les infos sur la ligue les équipes et les joueurs</Text>
             </View>
             <FlatList
                 data={infos.leagues}

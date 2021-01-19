@@ -10,7 +10,7 @@ const SocialNetworks = (infos) => {
     
     return (
         <View style={styles.mainContainer}>
-            <Text style={styles.text}>clique sur les icones pour rejoindre les pages officielles de la league</Text>
+            <Text style={styles.text}>clique sur les icones pour rejoindre les pages officielles de la ligue</Text>
             <View style={styles.container}>
                 <OpenURLButton url={`https://${strFacebook}`} reseau="facebook-box" color={Colors.blue500}/>
                 <OpenURLButton url={`https://${strTwitter}`} reseau="twitter-box" color={Colors.blue500}/>

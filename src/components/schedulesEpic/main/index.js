@@ -18,7 +18,7 @@ const Main = ({navigation}) => {
     return(
         <View style={styles.container}>
             <View >
-                <Text style={styles.title}>Selectionne une league pour voir le classement</Text>
+                <Text style={styles.title}>Selectionne une ligue pour voir le classement</Text>
             </View>
             <FlatList
                 data={infos.leagues}

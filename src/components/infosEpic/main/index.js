@@ -40,7 +40,8 @@ const styles = StyleSheet.create({
     separator: {
         height: 1,
         width: '100%',
-        backgroundColor: 'blue'
+        backgroundColor: '#091c3d',
+        marginVertical: "20%"
     },
     title: {
         fontWeight: 'bold',

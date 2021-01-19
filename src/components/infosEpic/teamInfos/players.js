@@ -27,7 +27,7 @@ const Players = ({teamName, navigation}) => {
         <View style={styles.players}>
         {players && players.map( player => {
             return(
-                <View key={player.strPlayer} style={styles.player}>
+                <View key={player.idPlayer} style={styles.player}>
                     <Player {...player} navigation={navigation}/>
                 </View>
             )

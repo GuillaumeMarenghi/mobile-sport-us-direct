@@ -1,67 +1,43 @@
 import {
-    GET_LAST_SCORE_NBA,
-    GET_LAST_SCORE_MLB,
-    GET_LAST_SCORE_NFL,
-    GET_LAST_SCORE_NHL,
-    GET_LAST_SCORE_MLS,
-    GET_LAST_SCORE_NBA_SUCCESS,
-    GET_LAST_SCORE_MLB_SUCCESS,
-    GET_LAST_SCORE_NFL_SUCCESS,
-    GET_LAST_SCORE_NHL_SUCCESS,
-    GET_LAST_SCORE_MLS_SUCCESS,
+    GET_LAST_SCORE_L1,
+    GET_LAST_SCORE_L2,
+    GET_LAST_SCORE_N1,
+    GET_LAST_SCORE_L1_SUCCESS,
+    GET_LAST_SCORE_L2_SUCCESS,
+    GET_LAST_SCORE_N1_SUCCESS,
     GET_LOGO,
     GET_LOGO_SUCCESS,
     GET_LAST_SCORE_ERROR,
     POST_NAV
 } from './actionsTypes';
 
-export const getLastScroresNBA = (payload) => ({
-    type: GET_LAST_SCORE_NBA,
+export const getLastScroresL1 = (payload) => ({
+    type: GET_LAST_SCORE_L1,
     payload
 });
 
-export const getLastScroresNBAsuccess = (payload) => ({
-    type: GET_LAST_SCORE_NBA_SUCCESS,
+export const getLastScroresL1success = (payload) => ({
+    type: GET_LAST_SCORE_L1_SUCCESS,
     payload
 });
 
-export const getLastScroresMLB = (payload) => ({
-    type: GET_LAST_SCORE_MLB,
+export const getLastScroresL2 = (payload) => ({
+    type: GET_LAST_SCORE_L2,
     payload
 });
 
-export const getLastScroresMLBsuccess = (payload) => ({
-    type: GET_LAST_SCORE_MLB_SUCCESS,
+export const getLastScroresL2success = (payload) => ({
+    type: GET_LAST_SCORE_L2_SUCCESS,
     payload
 });
 
-export const getLastScroresNFL = (payload) => ({
-    type: GET_LAST_SCORE_NFL,
+export const getLastScroresN1 = (payload) => ({
+    type: GET_LAST_SCORE_N1,
     payload
 });
 
-export const getLastScroresNFLsuccess = (payload) => ({
-    type: GET_LAST_SCORE_NFL_SUCCESS,
-    payload
-});
-
-export const getLastScroresNHL = (payload) => ({
-    type: GET_LAST_SCORE_NHL,
-    payload
-});
-
-export const getLastScroresNHLsuccess = (payload) => ({
-    type: GET_LAST_SCORE_NHL_SUCCESS,
-    payload
-});
-
-export const getLastScroresMLS = (payload) => ({
-    type: GET_LAST_SCORE_MLS,
-    payload
-});
-
-export const getLastScroresMLSsuccess = (payload) => ({
-    type: GET_LAST_SCORE_MLS_SUCCESS,
+export const getLastScroresN1success = (payload) => ({
+    type: GET_LAST_SCORE_N1_SUCCESS,
     payload
 });
 

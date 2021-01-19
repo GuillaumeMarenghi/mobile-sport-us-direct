@@ -6,16 +6,14 @@ import Scores from './scores';
 
 const main = () => {
 
-    const [value, setValue] = useState('NBA');
+    const [value, setValue] = useState('French%20Ligue%201');
 
     return(
         <View style={styles.section}>
             <ToggleButton.Row onValueChange={value => setValue(value)} value={value} >
-                <ToggleButton icon="basketball" value="NBA" style={styles.toggle}/>
-                <ToggleButton icon="baseball-bat" value="MLB" style={styles.toggle}/>
-                <ToggleButton icon="football" value="NFL" style={styles.toggle}/>
-                <ToggleButton icon="hockey-puck" value="NHL" style={styles.toggle}/>
-                <ToggleButton icon="soccer" value="American Major League Soccer" style={styles.toggle}/>
+                <ToggleButton icon="numeric-1-box" color="#cefb03" value="French%20Ligue%201" style={styles.toggle}/>
+                <ToggleButton icon="numeric-2-box" color="#1afed3" value="French%20Ligue%202" style={styles.toggle}/>
+                <ToggleButton icon="alpha-n-box" color="#2972a9" value="French%20Championnat%20National" style={styles.toggle}/>
             </ToggleButton.Row>
             <ScrollView>
                 <Scores stateValue={value}/>
@@ -29,7 +27,7 @@ const styles = StyleSheet.create({
 
     },
     toggle : {
-        width: "20%",
+        width: "33.3%",
     }
 })
 

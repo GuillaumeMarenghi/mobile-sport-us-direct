@@ -1,14 +1,10 @@
 import {
-    GET_NEXT_SCORE_NBA,
-    GET_NEXT_SCORE_MLB,
-    GET_NEXT_SCORE_NFL,
-    GET_NEXT_SCORE_NHL,
-    GET_NEXT_SCORE_MLS,
-    GET_NEXT_SCORE_NBA_SUCCESS,
-    GET_NEXT_SCORE_MLB_SUCCESS,
-    GET_NEXT_SCORE_NFL_SUCCESS,
-    GET_NEXT_SCORE_NHL_SUCCESS,
-    GET_NEXT_SCORE_MLS_SUCCESS,
+    GET_NEXT_SCORE_L1,
+    GET_NEXT_SCORE_L2,
+    GET_NEXT_SCORE_N1,
+    GET_NEXT_SCORE_L1_SUCCESS,
+    GET_NEXT_SCORE_L2_SUCCESS,
+    GET_NEXT_SCORE_N1_SUCCESS,
     GET_NEXT_SCORE_ERROR,
 } from '../actions/actionsTypes';
   
@@ -16,65 +12,39 @@ const defaultState = {};
   
 export const nextScores = (state = defaultState, action = {}) => {
 switch (action.type) {
-    case GET_NEXT_SCORE_NBA:
+    case GET_NEXT_SCORE_L1:
     return {
         ...state,
         loading: true,
         visibleLeague: action.payload
     }
-    case GET_NEXT_SCORE_NBA_SUCCESS:
+    case GET_NEXT_SCORE_L1_SUCCESS:
     return {
         ...state,
         loading: false,
         gameNextScores: action.payload,
         requestError: false
     }
-    case GET_NEXT_SCORE_NFL:
+    case GET_NEXT_SCORE_N1:
     return {
         ...state,
         loading: true,
         visibleLeague: action.payload
     }
-    case GET_NEXT_SCORE_NFL_SUCCESS:
+    case GET_NEXT_SCORE_N1_SUCCESS:
     return {
         ...state,
         loading: false,
         gameNextScores: action.payload,
         requestError: false
     }
-    case GET_NEXT_SCORE_MLB:
+    case GET_NEXT_SCORE_L2:
     return {
         ...state,
         loading: true,
         visibleLeague: action.payload
     }
-    case GET_NEXT_SCORE_MLB_SUCCESS:
-    return {
-        ...state,
-        loading: false,
-        gameNextScores: action.payload,
-        requestError: false
-    }
-    case GET_NEXT_SCORE_NHL:
-    return {
-        ...state,
-        loading: true,
-        visibleLeague: action.payload
-    }
-    case GET_NEXT_SCORE_NHL_SUCCESS:
-    return {
-        ...state,
-        loading: false,
-        gameNextScores: action.payload,
-        requestError: false
-    }
-    case GET_NEXT_SCORE_MLS:
-    return {
-        ...state,
-        loading: true,
-        visibleLeague: action.payload
-    }
-    case GET_NEXT_SCORE_MLS_SUCCESS:
+    case GET_NEXT_SCORE_L2_SUCCESS:
     return {
         ...state,
         loading: false,

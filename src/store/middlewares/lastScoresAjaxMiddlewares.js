@@ -1,19 +1,19 @@
 import axios from 'axios';
 const API_KEY = 4013017;
 
-import { GET_LAST_SCORE_NBA, GET_LAST_SCORE_NFL, GET_LAST_SCORE_NHL, GET_LAST_SCORE_MLB, GET_LAST_SCORE_MLS, GET_LOGO} from '../actions/actionsTypes';
-import { getLastScroresNBAsuccess, getLastScroresMLBsuccess, getLastScroresNFLsuccess, getLastScroresNHLsuccess, getLastScroresMLSsuccess, getLastScroresError, getLogoSuccess} from '../actions/actionLastScores';
+import { GET_LAST_SCORE_L1, GET_LAST_SCORE_L2, GET_LAST_SCORE_N1, GET_LOGO} from '../actions/actionsTypes';
+import { getLastScroresL1success, getLastScroresL2success, getLastScroresN1success, getLastScroresError, getLogoSuccess} from '../actions/actionLastScores';
 
 const lastScoresAjaxMiddleware = (store) => (next) => (action) => {
     next(action);
     switch (action.type) {
-        case GET_LAST_SCORE_NBA:
+        case GET_LAST_SCORE_L1:
             axios({
                 method: 'get',
-                url: `https://www.thesportsdb.com/api/v1/json/1/eventspastleague.php?id=4387`
+                url: `https://www.thesportsdb.com/api/v1/json/1/eventspastleague.php?id=4334`
             }).then(
                 (res) => {
-                    store.dispatch(getLastScroresNBAsuccess(res.data.events))
+                    store.dispatch(getLastScroresL1success(res.data.events))
                 }
             ).catch(
                 (err) => {
@@ -22,13 +22,13 @@ const lastScoresAjaxMiddleware = (store) => (next) => (action) => {
                 }
             )
             break;
-        case GET_LAST_SCORE_MLB:
+        case GET_LAST_SCORE_L2:
             axios({
                 method: 'get',
-                url: `https://www.thesportsdb.com/api/v1/json/1/eventspastleague.php?id=4424`
+                url: `https://www.thesportsdb.com/api/v1/json/1/eventspastleague.php?id=4401`
             }).then(
                 (res) => {
-                    store.dispatch(getLastScroresMLBsuccess(res.data.events))
+                    store.dispatch(getLastScroresL2success(res.data.events))
                 }
             ).catch(
                 (err) => {
@@ -37,43 +37,13 @@ const lastScoresAjaxMiddleware = (store) => (next) => (action) => {
                 }
             )
             break;
-        case GET_LAST_SCORE_NFL:
+        case GET_LAST_SCORE_N1:
             axios({
                 method: 'get',
-                url: `https://www.thesportsdb.com/api/v1/json/1/eventspastleague.php?id=4391`
+                url: `https://www.thesportsdb.com/api/v1/json/1/eventspastleague.php?id=4637`
             }).then(
                 (res) => {
-                    store.dispatch(getLastScroresNFLsuccess(res.data.events))
-                }
-            ).catch(
-                (err) => {
-                    console.log('error', err);
-                    store.dispatch(getLastScroresError())
-                }
-            )
-            break;
-        case GET_LAST_SCORE_NHL:
-            axios({
-                method: 'get',
-                url: `https://www.thesportsdb.com/api/v1/json/1/eventspastleague.php?id=4380`
-            }).then(
-                (res) => {
-                    store.dispatch(getLastScroresNHLsuccess(res.data.events))
-                }
-            ).catch(
-                (err) => {
-                    console.log('error', err);
-                    store.dispatch(getLastScroresError())
-                }
-            )
-            break;
-        case GET_LAST_SCORE_MLS:
-            axios({
-                method: 'get',
-                url: `https://www.thesportsdb.com/api/v1/json/1/eventspastleague.php?id=4346`
-            }).then(
-                (res) => {
-                    store.dispatch(getLastScroresMLSsuccess(res.data.events))
+                    store.dispatch(getLastScroresN1success(res.data.events))
                 }
             ).catch(
                 (err) => {

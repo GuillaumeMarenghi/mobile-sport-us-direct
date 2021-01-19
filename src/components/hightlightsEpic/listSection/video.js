@@ -14,28 +14,26 @@ const Video = ({league}) => {
     const highlights = useSelector(getStoreHighlights);
     
     let allLeagueHighlights;
+    let query;
     switch (league) {
-        case 'NBA':
-            allLeagueHighlights = highlights.NBAhighlights;
+        case 'Ligue 1 Uber Eats':
+            allLeagueHighlights = highlights.L1highlights;
+            query = "french%20ligue%201";
             break;
-        case 'NFL':
-            allLeagueHighlights = highlights.NFLhighlights;
+        case 'Ligue 2 BKT':
+            allLeagueHighlights = highlights.L2highlights;
+            query = "french%20ligue%202";
             break;
-        case 'MLB':
-            allLeagueHighlights = highlights.MLBhighlights;
+        case 'National 1':
+            allLeagueHighlights = highlights.N1highlights;
+            query = "French%20Championnat%20National";
             break;
-        case 'NHL':
-            allLeagueHighlights = highlights.NHLhighlights;
-        break;
-        case 'American Major League Soccer':
-            allLeagueHighlights = highlights.MLShighlights;
-        break;
         default:
             null
     }
 
     useEffect(() => {
-        dispatch(getHighlights(league));
+        dispatch(getHighlights(query));
     }, [])
 
     return(

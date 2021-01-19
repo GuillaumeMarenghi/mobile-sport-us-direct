@@ -31,7 +31,7 @@ const Calendar = ({teamId, name}) => {
                 return(
                 <View key={elm.idEvent} style={styles.line}>
                     <Text>
-                        <Text style={result == 'Victoire' ? styles.victory : styles.defeat}>
+                        <Text style={result == 'Victoire' && styles.victory || result == 'Défaite' && styles.defeat || result == 'égalité' && styles.draw }>
                             {result} 
                         </Text> {" "}
                         <Text style={styles.team}>{elm.strHomeTeam}</Text> {elm.intHomeScore} - {elm.intAwayScore} <Text style={styles.team}>{elm.strAwayTeam}</Text>
@@ -62,6 +62,10 @@ const styles = StyleSheet.create({
     },
     defeat: {
         color: '#FF0000',
+        fontWeight: 'bold'
+    },
+    draw: {
+        color: '#333',
         fontWeight: 'bold'
     },
     line: {

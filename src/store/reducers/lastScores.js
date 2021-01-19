@@ -1,14 +1,10 @@
 import {
-    GET_LAST_SCORE_NBA,
-    GET_LAST_SCORE_MLB,
-    GET_LAST_SCORE_NFL,
-    GET_LAST_SCORE_NHL,
-    GET_LAST_SCORE_MLS,
-    GET_LAST_SCORE_NBA_SUCCESS,
-    GET_LAST_SCORE_MLB_SUCCESS,
-    GET_LAST_SCORE_NFL_SUCCESS,
-    GET_LAST_SCORE_NHL_SUCCESS,
-    GET_LAST_SCORE_MLS_SUCCESS,
+    GET_LAST_SCORE_L1,
+    GET_LAST_SCORE_L2,
+    GET_LAST_SCORE_N1,
+    GET_LAST_SCORE_L1_SUCCESS,
+    GET_LAST_SCORE_L2_SUCCESS,
+    GET_LAST_SCORE_N1_SUCCESS,
     GET_LOGO,
     GET_LOGO_SUCCESS,
     GET_LAST_SCORE_ERROR,
@@ -19,65 +15,39 @@ const defaultState = {};
   
 export const lastScores = (state = defaultState, action = {}) => {
 switch (action.type) {
-    case GET_LAST_SCORE_NBA:
+    case GET_LAST_SCORE_L1:
     return {
         ...state,
         loading: true,
         visibleLeague: action.payload
     }
-    case GET_LAST_SCORE_NBA_SUCCESS:
+    case GET_LAST_SCORE_L1_SUCCESS:
     return {
         ...state,
         loading: false,
         gameLastScores: action.payload,
         requestError: false
     }
-    case GET_LAST_SCORE_NFL:
+    case GET_LAST_SCORE_N1:
     return {
         ...state,
         loading: true,
         visibleLeague: action.payload
     }
-    case GET_LAST_SCORE_NFL_SUCCESS:
+    case GET_LAST_SCORE_N1_SUCCESS:
     return {
         ...state,
         loading: false,
         gameLastScores: action.payload,
         requestError: false
     }
-    case GET_LAST_SCORE_MLB:
+    case GET_LAST_SCORE_L2:
     return {
         ...state,
         loading: true,
         visibleLeague: action.payload
     }
-    case GET_LAST_SCORE_MLB_SUCCESS:
-    return {
-        ...state,
-        loading: false,
-        gameLastScores: action.payload,
-        requestError: false
-    }
-    case GET_LAST_SCORE_NHL:
-    return {
-        ...state,
-        loading: true,
-        visibleLeague: action.payload
-    }
-    case GET_LAST_SCORE_NHL_SUCCESS:
-    return {
-        ...state,
-        loading: false,
-        gameLastScores: action.payload,
-        requestError: false
-    }
-    case GET_LAST_SCORE_MLS:
-    return {
-        ...state,
-        loading: true,
-        visibleLeague: action.payload
-    }
-    case GET_LAST_SCORE_MLS_SUCCESS:
+    case GET_LAST_SCORE_L2_SUCCESS:
     return {
         ...state,
         loading: false,

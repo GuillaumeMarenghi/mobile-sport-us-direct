@@ -24,6 +24,7 @@ const Main = ({navigation}) => {
                 data={infos.leagues}
                 renderItem={_renderItem}
                 keyExtractor={item => item.name}
+                ItemSeparatorComponent={() => <View style={styles.separator} />}
             />
         </View>
     )
@@ -39,8 +40,15 @@ const styles = StyleSheet.create({
     title: {
         fontWeight: 'bold',
         textAlign: 'center',
-        paddingHorizontal: '5%'
-    }
+        paddingHorizontal: '5%',
+        marginBottom: "10%",
+        marginTop: "10%"
+    },
+    separator: {
+        height: 1,
+        width: '100%',
+        marginVertical: "5%"
+    },
   });
 
 export default Main;

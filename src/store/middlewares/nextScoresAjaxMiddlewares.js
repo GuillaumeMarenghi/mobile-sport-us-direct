@@ -1,20 +1,20 @@
 import axios from 'axios';
 const API_KEY = 4013017;
 
-import { GET_NEXT_SCORE_NBA, GET_NEXT_SCORE_NFL, GET_NEXT_SCORE_NHL, GET_NEXT_SCORE_MLB, GET_NEXT_SCORE_MLS, GET_LOGO} from '../actions/actionsTypes';
+import { GET_NEXT_SCORE_L1, GET_NEXT_SCORE_L2, GET_NEXT_SCORE_N1, GET_LOGO} from '../actions/actionsTypes';
 import { getLogoSuccess} from '../actions/actionLastScores';
-import { getNextScroresNBAsuccess, getNextScroresMLBsuccess, getNextScroresNFLsuccess, getNextScroresNHLsuccess, getNextScroresMLSsuccess} from '../actions/actionNextScores'
+import { getNextScroresL1success, getNextScroresL2success, getNextScroresN1success} from '../actions/actionNextScores'
 
 const nextScoresAjaxMiddleware = (store) => (next) => (action) => {
     next(action);
     switch (action.type) {
-        case GET_NEXT_SCORE_NBA:
+        case GET_NEXT_SCORE_L1:
             axios({
                 method: 'get',
-                url: `https://www.thesportsdb.com/api/v1/json/1/eventsnextleague.php?id=4387`
+                url: `https://www.thesportsdb.com/api/v1/json/1/eventsnextleague.php?id=4334`
             }).then(
                 (res) => {
-                    store.dispatch(getNextScroresNBAsuccess(res.data.events))
+                    store.dispatch(getNextScroresL1success(res.data.events))
                 }
             ).catch(
                 (err) => {
@@ -23,13 +23,13 @@ const nextScoresAjaxMiddleware = (store) => (next) => (action) => {
                 }
             )
             break;
-        case GET_NEXT_SCORE_MLB:
+        case GET_NEXT_SCORE_L2:
             axios({
                 method: 'get',
-                url: `https://www.thesportsdb.com/api/v1/json/1/eventsnextleague.php?id=4424`
+                url: `https://www.thesportsdb.com/api/v1/json/1/eventsnextleague.php?id=4401`
             }).then(
                 (res) => {
-                    store.dispatch(getNextScroresMLBsuccess(res.data.events))
+                    store.dispatch(getNextScroresL2success(res.data.events))
                 }
             ).catch(
                 (err) => {
@@ -38,43 +38,13 @@ const nextScoresAjaxMiddleware = (store) => (next) => (action) => {
                 }
             )
             break;
-        case GET_NEXT_SCORE_NFL:
+        case GET_NEXT_SCORE_N1:
             axios({
                 method: 'get',
-                url: `https://www.thesportsdb.com/api/v1/json/1/eventsnextleague.php?id=4391`
+                url: `https://www.thesportsdb.com/api/v1/json/1/eventsnextleague.php?id=4637`
             }).then(
                 (res) => {
-                    store.dispatch(getNextScroresNFLsuccess(res.data.events))
-                }
-            ).catch(
-                (err) => {
-                    console.log('error', err);
-                    store.dispatch(getNextScroresError())
-                }
-            )
-            break;
-        case GET_NEXT_SCORE_NHL:
-            axios({
-                method: 'get',
-                url: `https://www.thesportsdb.com/api/v1/json/1/eventsnextleague.php?id=4380`
-            }).then(
-                (res) => {
-                    store.dispatch(getNextScroresNHLsuccess(res.data.events))
-                }
-            ).catch(
-                (err) => {
-                    console.log('error', err);
-                    store.dispatch(getNextScroresError())
-                }
-            )
-            break;
-        case GET_NEXT_SCORE_MLS:
-            axios({
-                method: 'get',
-                url: `https://www.thesportsdb.com/api/v1/json/1/eventsnextleague.php?id=4346`
-            }).then(
-                (res) => {
-                    store.dispatch(getNextScroresMLSsuccess(res.data.events))
+                    store.dispatch(getNextScroresN1success(res.data.events))
                 }
             ).catch(
                 (err) => {

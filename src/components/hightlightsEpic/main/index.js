@@ -10,15 +10,12 @@ const main = () => {
             {/* <Text style={styles.title}>Choix des ligues</Text> */}
             <ScrollView >
             <Text style={styles.infos}>Les ligues bloquent parfoit les videos dans les lecteurs intégrés si c'est le cas cliquez sur le button "voir la video sur youtube" </Text>
-            <ListSection league="NFL" icon="football" color="#e73c3f"/>
-            <ListSection league="NBA" icon="basketball" color="#f6994f"/>
-            <ListSection league='MLB' icon="baseball" color="#0f2472"/>
-            <ListSection league='NHL' icon="hockey-puck" color="#73717e"/>
-            <ListSection league='American Major League Soccer' icon="soccer" color="#f5c30a"/>
+            <ListSection league="Ligue 1 Uber Eats" icon="soccer" color="#091c3d"/>
+            <ListSection league="Ligue 2 BKT" icon="soccer" color="#1afed3"/>
             <View style={styles.logoCtn}>
                 <Image 
                     style={styles.logo}
-                    source={require('../../../../assets/ZSPlogo.png')}>
+                    source={require('../../../../assets/soccer_france.png')}>
                 </Image>
             </View>
             </ScrollView>
@@ -43,7 +40,8 @@ const styles = StyleSheet.create({
     },
     logo: {
         width: 300,
-        height: 300
+        height: 300,
+        marginTop: 50
     },
     logoCtn: {
         alignItems: "center"

@@ -1,10 +1,8 @@
 import {
     GET_HIGHLIGHTS,
-    GET_HIGHLIGHTS_NBA_SUCCESS,
-    GET_HIGHLIGHTS_MLB_SUCCESS,
-    GET_HIGHLIGHTS_NFL_SUCCESS,
-    GET_HIGHLIGHTS_NHL_SUCCESS,
-    GET_HIGHLIGHTS_MLS_SUCCESS,
+    GET_HIGHLIGHTS_L1_SUCCESS,
+    GET_HIGHLIGHTS_L2_SUCCESS,
+    GET_HIGHLIGHTS_N1_SUCCESS,
     GET_HIGHLIGHTS_ERROR
 } from '../actions/actionsTypes';
 
@@ -18,35 +16,23 @@ export const highlights = (state = defaultState, action = {}) => {
                 loading: true,
                 league: action.payload
             }
-        case GET_HIGHLIGHTS_NBA_SUCCESS:
+        case GET_HIGHLIGHTS_L1_SUCCESS:
             return {
                 ...state,
                 loading: false,
-                NBAhighlights: action.payload
+                L1highlights: action.payload
             }
-        case GET_HIGHLIGHTS_MLB_SUCCESS:
+        case GET_HIGHLIGHTS_L2_SUCCESS:
             return {
                 ...state,
                 loading: false,
-                MLBhighlights: action.payload
+                L2highlights: action.payload
             }
-        case GET_HIGHLIGHTS_NHL_SUCCESS:
+        case GET_HIGHLIGHTS_N1_SUCCESS:
             return {
                 ...state,
                 loading: false,
-                NHLhighlights: action.payload
-            }
-        case GET_HIGHLIGHTS_NFL_SUCCESS:
-            return {
-                ...state,
-                loading: false,
-                NFLhighlights: action.payload
-            }
-        case GET_HIGHLIGHTS_MLS_SUCCESS:
-            return {
-                ...state,
-                loading: false,
-                MLShighlights: action.payload
+                N1highlights: action.payload
             }
         case GET_HIGHLIGHTS_ERROR:
             return {

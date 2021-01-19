@@ -26,12 +26,11 @@ const PlayerInfos = ({route}) => {
         <Text style={styles.fiche}>{player.strPlayer}</Text>
         <Avatar.Image size={200} source={{uri: player.strThumb}} style={styles.avatar}/>
         <View style={styles.infos}>
-            <Tag content={player.strTeam} bg='grey' clr='white' />
-            <Tag icon="arrow-expand-vertical" content={player.strHeight} bg="#fb9e68" clr='white' />
-            <Tag icon="weight" content={player.strWeight} bg="#44c6c2" clr="white" />
-            {player.strPosition ? <Tag content={player.strPosition} bg="#b04ab5" clr="white" /> : null}
-            <Tag content={`Né le ${player.dateBorn} à ${player.strBirthLocation}`} bg="#64cbf4" clr="white" />
-            <Tag icon="flag" content={player.strNationality} bg="#fcc350" clr="white" />
+            <Tag content={player.strTeam} bg='#091c3d' clr='#cefb03' />
+            <Tag icon="arrow-expand-vertical" content={player.strHeight} bg="#2972a9" clr='white' />
+            <Tag icon="weight" content={player.strWeight} bg="#1afed3" clr="#091c3d" />
+            <Tag content={`Né le ${player.dateBorn} à ${player.strBirthLocation}`} bg="#cefb03" clr="#091c3d" />
+            <Tag icon="flag" content={player.strNationality} bg="#091c3d" clr="#1afed3" />
         </View>
         {player.strTwitter || player.strInstagram ?
         <View style={styles.sn}>

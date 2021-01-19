@@ -41,9 +41,6 @@ const NextBox = ( {game, teams} ) => {
 
 const styles = StyleSheet.create({
     container : {
-        //borderWidth: 3,
-        //borderColor: '#bf0d3e',
-        //backgroundColor: '#bf0d3e30',
         backgroundColor: '#041e4230',
         borderRadius: 20,
         padding: 10,
@@ -51,10 +48,10 @@ const styles = StyleSheet.create({
     },
     date : {
         textAlign: 'center',
-        backgroundColor: '#fff',
+        backgroundColor: '#cefb03',
         padding: 5,
         borderRadius: 10,
-        color: '#041e42',
+        color: '#091c3d',
         marginBottom: 8
     },
     section : {
@@ -66,7 +63,7 @@ const styles = StyleSheet.create({
     score: {
         fontWeight: 'bold',
         fontSize: 30,
-        color: '#041e42'
+        color: '#091c3d'
     },
     team : {
         textAlign: 'center',

@@ -1,10 +1,8 @@
 import {
     GET_HIGHLIGHTS,
-    GET_HIGHLIGHTS_NBA_SUCCESS,
-    GET_HIGHLIGHTS_MLS_SUCCESS,
-    GET_HIGHLIGHTS_NHL_SUCCESS,
-    GET_HIGHLIGHTS_NFL_SUCCESS,
-    GET_HIGHLIGHTS_MLB_SUCCESS,
+    GET_HIGHLIGHTS_L1_SUCCESS,
+    GET_HIGHLIGHTS_L2_SUCCESS,
+    GET_HIGHLIGHTS_N1_SUCCESS,
     GET_HIGHLIGHTS_ERROR
 } from './actionsTypes';
 
@@ -13,28 +11,18 @@ export const getHighlights = (payload) => ({
     payload
 });
 
-export const getHighlightsNBASucces = (payload) => ({
-    type: GET_HIGHLIGHTS_NBA_SUCCESS,
+export const getHighlightsL1Succes = (payload) => ({
+    type: GET_HIGHLIGHTS_L1_SUCCESS,
     payload
 });
 
-export const getHighlightsMLSSucces = (payload) => ({
-    type: GET_HIGHLIGHTS_MLS_SUCCESS,
+export const getHighlightsL2Succes = (payload) => ({
+    type: GET_HIGHLIGHTS_L2_SUCCESS,
     payload
 });
 
-export const getHighlightsNHLSucces = (payload) => ({
-    type: GET_HIGHLIGHTS_NHL_SUCCESS,
-    payload
-});
-
-export const getHighlightsNFLSucces = (payload) => ({
-    type: GET_HIGHLIGHTS_NFL_SUCCESS,
-    payload
-});
-
-export const getHighlightsMLBSucces = (payload) => ({
-    type: GET_HIGHLIGHTS_MLB_SUCCESS,
+export const getHighlightsN1Succes = (payload) => ({
+    type: GET_HIGHLIGHTS_N1_SUCCESS,
     payload
 });
 

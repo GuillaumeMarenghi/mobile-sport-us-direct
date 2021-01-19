@@ -2,7 +2,7 @@ import axios from 'axios';
 const API_KEY = 4013017;
 
 import { GET_HIGHLIGHTS } from '../actions/actionsTypes';
-import { getHighlightsNBASucces, getHighlightsMLBSucces, getHighlightsNFLSucces, getHighlightsNHLSucces, getHighlightsMLSSucces, getHighlightsError} from '../actions/actionsHighlights';
+import { getHighlightsL1Succes, getHighlightsL2Succes, getHighlightsN1Succes, getHighlightsError} from '../actions/actionsHighlights';
 
 const highlightsAjaxMiddlewares = (store) => (next) => (action) => {
     next(action);
@@ -14,20 +14,15 @@ const highlightsAjaxMiddlewares = (store) => (next) => (action) => {
             }).then(
                 (res) => {
                     switch (store.getState().highlights.league) {
-                        case "NBA":
-                            store.dispatch(getHighlightsNBASucces(res.data.tvhighlights))
+                        case "french%20ligue%201":
+                            store.dispatch(getHighlightsL1Succes(res.data.tvhighlights))
                             break;
-                        case "MLB":
-                            store.dispatch(getHighlightsMLBSucces(res.data.tvhighlights))
+                        case "french%20ligue%202":
+                            store.dispatch(getHighlightsL2Succes(res.data.tvhighlights))
                             break;
-                        case "NFL":
-                            store.dispatch(getHighlightsNFLSucces(res.data.tvhighlights))
+                        case "French%20Championnat%20National":
+                            store.dispatch(getHighlightsN1Succes(res.data.tvhighlights))
                             break;
-                        case "NHL":
-                            store.dispatch(getHighlightsNHLSucces(res.data.tvhighlights))
-                            break;
-                        case "American Major League Soccer":
-                            store.dispatch(getHighlightsMLSSucces(res.data.tvhighlights))
                         default:
                             return
                     }

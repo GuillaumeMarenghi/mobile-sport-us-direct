@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { View, StyleSheet, Text } from "react-native";
 import { ActivityIndicator } from "react-native-paper";
 
-import { getNextScroresNBA, getNextScroresMLB, getNextScroresNFL, getNextScroresNHL, getNextScroresMLS} from "../../../store/actions/actionNextScores";
+import { getNextScroresL1, getNextScroresL2, getNextScroresN1} from "../../../store/actions/actionNextScores";
 import { getLogo } from "../../../store/actions/actionLastScores";
 import { getStoreNextScores, getStoreLastScores} from "../../../store/selectors";
 
@@ -18,20 +18,14 @@ const NextScores = ({stateValue}) => {
 
     useEffect(() => {
         switch (stateValue){
-            case 'NBA':
-                dispatch(getNextScroresNBA(stateValue));
+            case 'French%20Ligue%201':
+                dispatch(getNextScroresL1(stateValue));
                 break;
-            case 'MLB':
-                dispatch(getNextScroresMLB(stateValue));
+            case 'French%20Ligue%202':
+                dispatch(getNextScroresL2(stateValue));
                 break;
-            case 'NFL':
-                dispatch(getNextScroresNFL(stateValue));
-                break;
-            case 'NHL':
-                dispatch(getNextScroresNHL(stateValue));
-                break;
-            case 'American Major League Soccer':
-                dispatch(getNextScroresMLS(stateValue));
+            case 'French%20Championnat%20National':
+                dispatch(getNextScroresN1(stateValue));
                 break;
             default:
                 return;
@@ -59,8 +53,8 @@ const styles = StyleSheet.create({
         paddingBottom : 260
     },
     title : {
-        backgroundColor: '#bf0d3e',
-        color: '#fff',
+        backgroundColor: '#1afed3',
+        color: '#091c3d',
         textAlign: 'center',
         paddingVertical: 4
     },

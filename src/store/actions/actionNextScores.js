@@ -1,64 +1,40 @@
 import {
-    GET_NEXT_SCORE_NBA,
-    GET_NEXT_SCORE_MLB,
-    GET_NEXT_SCORE_NFL,
-    GET_NEXT_SCORE_NHL,
-    GET_NEXT_SCORE_MLS,
-    GET_NEXT_SCORE_NBA_SUCCESS,
-    GET_NEXT_SCORE_MLB_SUCCESS,
-    GET_NEXT_SCORE_NFL_SUCCESS,
-    GET_NEXT_SCORE_NHL_SUCCESS,
-    GET_NEXT_SCORE_MLS_SUCCESS,
+    GET_NEXT_SCORE_L1,
+    GET_NEXT_SCORE_L2,
+    GET_NEXT_SCORE_N1,
+    GET_NEXT_SCORE_L1_SUCCESS,
+    GET_NEXT_SCORE_L2_SUCCESS,
+    GET_NEXT_SCORE_N1_SUCCESS,
     GET_NEXT_SCORE_ERROR,
 } from './actionsTypes';
 
-export const getNextScroresNBA = (payload) => ({
-    type: GET_NEXT_SCORE_NBA,
+export const getNextScroresL1 = (payload) => ({
+    type: GET_NEXT_SCORE_L1,
     payload
 });
 
-export const getNextScroresNBAsuccess = (payload) => ({
-    type: GET_NEXT_SCORE_NBA_SUCCESS,
+export const getNextScroresL1success = (payload) => ({
+    type: GET_NEXT_SCORE_L1_SUCCESS,
     payload
 });
 
-export const getNextScroresMLB = (payload) => ({
-    type: GET_NEXT_SCORE_MLB,
+export const getNextScroresL2 = (payload) => ({
+    type: GET_NEXT_SCORE_L2,
     payload
 });
 
-export const getNextScroresMLBsuccess = (payload) => ({
-    type: GET_NEXT_SCORE_MLB_SUCCESS,
+export const getNextScroresL2success = (payload) => ({
+    type: GET_NEXT_SCORE_L2_SUCCESS,
     payload
 });
 
-export const getNextScroresNFL = (payload) => ({
-    type: GET_NEXT_SCORE_NFL,
+export const getNextScroresN1 = (payload) => ({
+    type: GET_NEXT_SCORE_N1,
     payload
 });
 
-export const getNextScroresNFLsuccess = (payload) => ({
-    type: GET_NEXT_SCORE_NFL_SUCCESS,
-    payload
-});
-
-export const getNextScroresNHL = (payload) => ({
-    type: GET_NEXT_SCORE_NHL,
-    payload
-});
-
-export const getNextScroresNHLsuccess = (payload) => ({
-    type: GET_NEXT_SCORE_NHL_SUCCESS,
-    payload
-});
-
-export const getNextScroresMLS = (payload) => ({
-    type: GET_NEXT_SCORE_MLS,
-    payload
-});
-
-export const getNextScroresMLSsuccess = (payload) => ({
-    type: GET_NEXT_SCORE_MLS_SUCCESS,
+export const getNextScroresN1success = (payload) => ({
+    type: GET_NEXT_SCORE_N1_SUCCESS,
     payload
 });
 

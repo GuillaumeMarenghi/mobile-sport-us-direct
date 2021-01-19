@@ -12,7 +12,7 @@ const main = ({league, icon, color}) => {
     return(
         <View>
             <List.Item
-                style={{backgroundColor: `${color}50`, borderBottomWidth: 3, borderBottomColor: `${color}`}}
+                style={{backgroundColor: `${color}50`, borderBottomWidth: 3, borderBottomColor: `${color}`, padding: 25}}
                 title={league}
                 description={`highlights ${league}`}
                 left={props => <List.Icon {...props} icon={icon} />}

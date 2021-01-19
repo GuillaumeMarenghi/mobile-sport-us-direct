@@ -10,6 +10,55 @@ const _onPress = () => {
         navigation.navigate('Infos joueur',{player})
 } 
     
+    let position;
+    switch (player.strPosition) {
+        case "Defender":
+            position = "Défenseur"
+            break;
+        case "Centre Back":
+            position = "Défenseur"
+            break;
+        case "Goalkeeper":
+            position = "Gardien"
+            break;
+        case "Attacking Midfielder":
+            position = "Milieu Offensif"
+            break;
+        case "Midfielder":
+            position = "Milieu"
+            break;
+        case "Centre Midfielder":
+            position = "Milieu"
+            break;
+        case "Defensive Midfielder":
+            position = "Milieu Défensif"
+            break;  
+        case "Winger":
+            position = "Ailier"
+            break;  
+        case "Right Wing":
+            position = "Ailier"
+            break;
+        case "Left Wing":
+            position = "Ailier"
+            break;
+        case "Left Back":
+            position = "Lateral Gauche"
+            break;
+        case "Right Back":
+            position = "Lateral Droit"
+            break;
+        case "Forward":
+            position = "Attaquant"
+            break;
+        case "Manager":
+            position = "Entraineur"
+            break;
+        default:
+            position = player.strPosition
+            break;
+    }
+
     return(
         <TouchableOpacity
         style={styles.container}
@@ -19,8 +68,8 @@ const _onPress = () => {
                 source={{uri: player.strCutout ? player.strCutout : player.strThumb}}
             />
             <Text style={styles.player}>{player.strPlayer}</Text>
-            <Text>{player.strPosition}</Text>
-            <Button  mode="contained" compact={true} style={styles.btn} uppercase={false}>
+            <Text>{position}</Text>
+            <Button  mode="contained" compact={true} style={styles.btn} uppercase={false} color="#091c3d">
             voir la fiche
             </Button>
         </TouchableOpacity>

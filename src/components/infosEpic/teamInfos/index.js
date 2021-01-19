@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
     },
     SNContainer : {
         margin : 10,
-        borderTopColor : 'black',
+        borderColor : '#cefb03',
         borderTopWidth: 5,
         borderBottomWidth: 5,
         padding: 5

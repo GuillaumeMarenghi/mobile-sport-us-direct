@@ -1,59 +1,37 @@
 import {
-    GET_LIVE_SCORE_NBA,
-    GET_LIVE_SCORE_MLB,
-    GET_LIVE_SCORE_NFL,
-    GET_LIVE_SCORE_NHL,
-    GET_LIVE_SCORE_MLS,
-    GET_LIVE_SCORE_NBA_SUCCESS,
-    GET_LIVE_SCORE_MLB_SUCCESS,
-    GET_LIVE_SCORE_NFL_SUCCESS,
-    GET_LIVE_SCORE_NHL_SUCCESS,
-    GET_LIVE_SCORE_MLS_SUCCESS,
+    GET_LIVE_SCORE_L1,
+    GET_LIVE_SCORE_L2,
+    GET_LIVE_SCORE_N1,
+    GET_LIVE_SCORE_L1_SUCCESS,
+    GET_LIVE_SCORE_L2_SUCCESS,
+    GET_LIVE_SCORE_N1_SUCCESS,
     GET_LIVE_SCORE_ERROR
 } from './actionsTypes';
 
-export const getLiveScroresNBA = () => ({
-    type: GET_LIVE_SCORE_NBA,
+export const getLiveScroresL1 = () => ({
+    type: GET_LIVE_SCORE_L1,
 });
 
-export const getLiveScroresNBAsuccess = (payload) => ({
-    type: GET_LIVE_SCORE_NBA_SUCCESS,
+export const getLiveScroresL1success = (payload) => ({
+    type: GET_LIVE_SCORE_L1_SUCCESS,
     payload
 });
 
-export const getLiveScroresMLB = () => ({
-    type: GET_LIVE_SCORE_MLB,
+export const getLiveScroresL2 = () => ({
+    type: GET_LIVE_SCORE_L2,
 });
 
-export const getLiveScroresMLBsuccess = (payload) => ({
-    type: GET_LIVE_SCORE_MLB_SUCCESS,
+export const getLiveScroresL2success = (payload) => ({
+    type: GET_LIVE_SCORE_L2_SUCCESS,
     payload
 });
 
-export const getLiveScroresNFL = () => ({
-    type: GET_LIVE_SCORE_NFL, 
+export const getLiveScroresN1 = () => ({
+    type: GET_LIVE_SCORE_N1, 
 });
 
-export const getLiveScroresNFLsuccess = (payload) => ({
-    type: GET_LIVE_SCORE_NFL_SUCCESS,
-    payload
-});
-
-export const getLiveScroresNHL = () => ({
-    type: GET_LIVE_SCORE_NHL,    
-});
-
-export const getLiveScroresNHLsuccess = (payload) => ({
-    type: GET_LIVE_SCORE_NHL_SUCCESS,
-    payload
-});
-
-export const getLiveScroresMLS = () => ({
-    type: GET_LIVE_SCORE_MLS, 
-});
-
-export const getLiveScroresMLSsuccess = (payload) => ({
-    type: GET_LIVE_SCORE_MLS_SUCCESS,
+export const getLiveScroresN1success = (payload) => ({
+    type: GET_LIVE_SCORE_N1_SUCCESS,
     payload
 });
 

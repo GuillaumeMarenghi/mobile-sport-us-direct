@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { View, StyleSheet, Text } from "react-native";
 import { ActivityIndicator } from "react-native-paper";
 
-import { getLastScroresNBA, getLastScroresMLB, getLastScroresNFL, getLastScroresNHL, getLastScroresMLS, getLogo} from "../../../store/actions/actionLastScores";
+import { getLastScroresL1, getLastScroresL2, getLastScroresN1, getLogo} from "../../../store/actions/actionLastScores";
 import { getStoreLastScores} from "../../../store/selectors";
 
 import GameBox from './gameBox';
@@ -16,20 +16,14 @@ import Error from '../../_shared.js/error'
 
     useEffect(() => {
         switch (stateValue){
-            case 'NBA':
-                dispatch(getLastScroresNBA(stateValue));
+            case 'French%20Ligue%201':
+                dispatch(getLastScroresL1(stateValue));
                 break;
-            case 'MLB':
-                dispatch(getLastScroresMLB(stateValue));
+            case 'French%20Ligue%202':
+                dispatch(getLastScroresL2(stateValue));
                 break;
-            case 'NFL':
-                dispatch(getLastScroresNFL(stateValue));
-                break;
-            case 'NHL':
-                dispatch(getLastScroresNHL(stateValue));
-                break;
-            case 'American Major League Soccer':
-                dispatch(getLastScroresMLS(stateValue));
+            case 'French%20Championnat%20National':
+                dispatch(getLastScroresN1(stateValue));
                 break;
             default:
                 return;
@@ -54,8 +48,8 @@ const styles = StyleSheet.create({
     section : {
     },
     title : {
-        backgroundColor: '#bf0d3e',
-        color: '#fff',
+        backgroundColor: '#1afed3',
+        color: '#091c3d',
         textAlign: 'center',
         paddingVertical: 4
     }

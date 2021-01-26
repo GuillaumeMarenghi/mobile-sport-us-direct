@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 import { createStackNavigator } from "@react-navigation/stack";
 
 import Main from './main';
-/* import Details from './details/main'; */
+import Details from './details/main';
 
 const Stack = createStackNavigator();
 
@@ -12,7 +12,7 @@ const InfosStack = () => {
     
         <Stack.Navigator>
             <Stack.Screen name="Scores" component={Main} />
-            {/* <Stack.Screen name="Details" component={Details} /> */}
+            <Stack.Screen name="Details" component={Details} />
         </Stack.Navigator>
     
     )

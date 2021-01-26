@@ -8,7 +8,10 @@ import {
     GET_LOGO,
     GET_LOGO_SUCCESS,
     GET_LAST_SCORE_ERROR,
-    POST_NAV
+    POST_NAV,
+    GET_EVENT_DETAIL,
+    GET_EVENT_DETAIL_STATS_SUCCESS,
+    GET_EVENT_DETAIL_TIMELINE_SUCCESS
 } from './actionsTypes';
 
 export const getLastScroresL1 = (payload) => ({
@@ -59,3 +62,18 @@ export const postNav = (payload) => ({
     type: POST_NAV,
     payload
 });
+
+export const getEventDetail = (payload) => ({
+    type: GET_EVENT_DETAIL,
+    payload
+});
+
+export const getEventDetailStatsSuccess = (payload) => ({
+    type: GET_EVENT_DETAIL_STATS_SUCCESS,
+    payload
+});
+
+export const getEventDetailTimelineSuccess = (payload) => ({
+    type: GET_EVENT_DETAIL_TIMELINE_SUCCESS,
+    payload
+})

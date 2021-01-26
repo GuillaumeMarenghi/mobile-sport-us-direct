@@ -8,7 +8,10 @@ import {
     GET_LOGO,
     GET_LOGO_SUCCESS,
     GET_LAST_SCORE_ERROR,
-    POST_NAV
+    POST_NAV,
+    GET_EVENT_DETAIL_STATS_SUCCESS,
+    GET_EVENT_DETAIL_TIMELINE_SUCCESS,
+    GET_EVENT_DETAIL
 } from '../actions/actionsTypes';
   
 const defaultState = {};
@@ -75,6 +78,23 @@ switch (action.type) {
         return {
             ...state,
             navigation: action.payload
+        }
+    case GET_EVENT_DETAIL:
+        return {
+            ...state,
+            eventId : action.payload,
+            eventDetailStats: "",
+            eventDetailTimeline: ""
+        }
+    case GET_EVENT_DETAIL_STATS_SUCCESS:
+        return {
+            ...state,
+            eventDetailStats : action.payload,      
+        }
+    case GET_EVENT_DETAIL_TIMELINE_SUCCESS:
+        return {
+            ...state,
+            eventDetailTimeline : action.payload
         }
     default:
     return state;

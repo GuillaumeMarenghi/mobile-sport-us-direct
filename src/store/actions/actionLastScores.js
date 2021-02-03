@@ -11,8 +11,13 @@ import {
     POST_NAV,
     GET_EVENT_DETAIL,
     GET_EVENT_DETAIL_STATS_SUCCESS,
-    GET_EVENT_DETAIL_TIMELINE_SUCCESS
+    GET_EVENT_DETAIL_TIMELINE_SUCCESS,
+    CLEAR_STATE
 } from './actionsTypes';
+
+export const clearState = () => ({
+    type: CLEAR_STATE
+})
 
 export const getLastScroresL1 = (payload) => ({
     type: GET_LAST_SCORE_L1,

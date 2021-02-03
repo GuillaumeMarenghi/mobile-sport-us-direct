@@ -23,7 +23,7 @@ const NextBox = ( {game, teams} ) => {
                     <Text style={styles.team}>{game.strHomeTeam}</Text>
                 </View>
                 <View >
-                    <Text style={styles.score}>VS</Text>
+                    <Text style={styles.score}>VS </Text>
                 </View>
                 <View style={styles.teamCtn}>
                       <Image

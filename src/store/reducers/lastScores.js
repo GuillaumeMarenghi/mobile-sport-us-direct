@@ -11,13 +11,20 @@ import {
     POST_NAV,
     GET_EVENT_DETAIL_STATS_SUCCESS,
     GET_EVENT_DETAIL_TIMELINE_SUCCESS,
-    GET_EVENT_DETAIL
+    GET_EVENT_DETAIL,
+    CLEAR_STATE
 } from '../actions/actionsTypes';
   
 const defaultState = {};
   
 export const lastScores = (state = defaultState, action = {}) => {
 switch (action.type) {
+    case CLEAR_STATE:
+        return{
+            ...state,
+            eventDetailStats: "",
+            eventDetailTimeline: ""
+        }
     case GET_LAST_SCORE_L1:
     return {
         ...state,

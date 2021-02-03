@@ -9,7 +9,7 @@ import { getStoreLastScores} from "../../../store/selectors";
 import GameBox from './gameBox';
 import Error from '../../_shared.js/error'
 
-    const LastScores = ({stateValue}) => {
+const LastScores = ({stateValue}) => {
 
     const dispatch = useDispatch();
     const lastScores = useSelector(getStoreLastScores);

@@ -11,17 +11,6 @@ const Timeline = ({timeline})=> {
     const lastScores = useSelector(getStoreLastScores);
     const dispatch = useDispatch();
     const sanTimeline = timeline.filter(elm => elm.strTimeline === "Goal" || elm.strTimeline === "Card")
-    
-    useEffect(() => {
-/*         lastScores.navigation.addListener('beforeRemove', () => {
-            console.log("back")
-            dispatch(clearState)
-            }) */
-            console.log('1')
-            return () => {
-                console.log("clear")
-            }
-    });
 
     return(
     <View>

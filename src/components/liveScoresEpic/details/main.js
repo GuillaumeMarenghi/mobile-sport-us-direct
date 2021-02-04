@@ -1,10 +1,10 @@
 import React, {useEffect} from 'react';
 import { useSelector, useDispatch } from "react-redux";
-import { ScrollView, StyleSheet, Text } from "react-native";
-import { ActivityIndicator } from "react-native-paper";
+import { ScrollView } from "react-native";
 
 import { getStoreLastScores } from '../../../store/selectors';
 import { getEventDetail } from '../../../store/actions/actionLastScores'
+import { clearState } from '../../../store/actions/actionLastScores';
 
 import Header from './header';
 import Timeline from './timeline';
@@ -20,6 +20,7 @@ const Detail = ({route}) => {
 
     useEffect(() => {
         dispatch(getEventDetail(eventId))
+        return () => dispatch(clearState())
     },[])
 
     return(
@@ -30,7 +31,7 @@ const Detail = ({route}) => {
             awayTeam={awayTeam}
             />
             {state.eventDetailTimeline ? <Timeline timeline={state.eventDetailTimeline}/> : null}
-            {state.eventDetailStats ? <Stats/> : null}
+            {state.eventDetailStats ? <Stats stats={state.eventDetailStats}/> : null}
         </ScrollView>
     )
 }
